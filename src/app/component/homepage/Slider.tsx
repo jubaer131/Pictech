@@ -1,212 +1,269 @@
 "use client"
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
+import React from "react"
+import { useKeenSlider } from "keen-slider/react"
+import "keen-slider/keen-slider.min.css"
+import Image from "next/image"
+import { LiaStarSolid } from "react-icons/lia";
 
-// import './styles.css';
+const Slider: React.FC = () => {
+    const [sliderRef] = useKeenSlider({
+        loop: true,
+        mode: "free",
+        slides: { origin: "center", perView: 4.20, spacing: 0 },
+        range: {
+            min: -5,
+            max: 5,
+        },
+    })
 
-// import required modules
-import { Pagination } from 'swiper/modules';
-
-
-const Slider = () => {
     return (
         <>
-            <Swiper
-                slidesPerView={5}
-                centeredSlides={true}
-                spaceBetween={70}
-                grabCursor={true}
-                pagination={{
-                    clickable: true,
-                }}
-                modules={[Pagination]}
-                className="mySwiper"
-            >
+            <div className="text-center my-20">
+                <h1 >Don't just take our word for it</h1>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum industry's standard dummy text ever since the 1500s</p>
+            </div>
+            <div ref={sliderRef} className="keen-slider">
+                <div className="keen-slider__slide number-slide2 ">
+                    <div className="container flex flex-col w-[400px] h-[418px]  p-6 m-0  rounded-md bg-[#eef3ff]">
+                        <div className="flex justify-between ">
+                            <div>
+                                <Image
 
-                <SwiperSlide>
-                    <div className=" flex flex-col w-full  p-6 mx-auto divide-y rounded-md dark:divide-gray-300 dark:bg-gray-50 dark:text-gray-800">
-                        <div className="flex justify-between p-4">
-                            <div className="flex space-x-4">
-                                <div>
-                                    {/* <img src="https://source.unsplash.com/100x100/?portrait" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" /> */}
-                                </div>
-                                <div>
-                                    <h4 className="font-bold">Leroy Jenkins</h4>
-                                    <span className="text-xs dark:text-gray-600">2 days ago</span>
-                                </div>
+                                    src="https://i.ibb.co.com/rckpwZr/Logo-2.png"
+                                    width={76}
+                                    height={28}
+                                    alt="Clutch"
+                                />
                             </div>
                             <div className="flex items-center space-x-2 dark:text-yellow-700">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-5 h-5 fill-current text-orange-500">
-                                    <path d="M494,198.671a40.536,40.536,0,0,0-32.174-27.592L345.917,152.242,292.185,47.828a40.7,40.7,0,0,0-72.37,0L166.083,152.242,50.176,171.079a40.7,40.7,0,0,0-22.364,68.827l82.7,83.368-17.9,116.055a40.672,40.672,0,0,0,58.548,42.538L256,428.977l104.843,52.89a40.69,40.69,0,0,0,58.548-42.538l-17.9-116.055,82.7-83.368A40.538,40.538,0,0,0,494,198.671Zm-32.53,18.7L367.4,312.2l20.364,132.01a8.671,8.671,0,0,1-12.509,9.088L256,393.136,136.744,453.3a8.671,8.671,0,0,1-12.509-9.088L144.6,312.2,50.531,217.37a8.7,8.7,0,0,1,4.778-14.706L187.15,181.238,248.269,62.471a8.694,8.694,0,0,1,15.462,0L324.85,181.238l131.841,21.426A8.7,8.7,0,0,1,461.469,217.37Z"></path>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-5 h-5 fill-current">
-                                    <path d="M494,198.671a40.536,40.536,0,0,0-32.174-27.592L345.917,152.242,292.185,47.828a40.7,40.7,0,0,0-72.37,0L166.083,152.242,50.176,171.079a40.7,40.7,0,0,0-22.364,68.827l82.7,83.368-17.9,116.055a40.672,40.672,0,0,0,58.548,42.538L256,428.977l104.843,52.89a40.69,40.69,0,0,0,58.548-42.538l-17.9-116.055,82.7-83.368A40.538,40.538,0,0,0,494,198.671Zm-32.53,18.7L367.4,312.2l20.364,132.01a8.671,8.671,0,0,1-12.509,9.088L256,393.136,136.744,453.3a8.671,8.671,0,0,1-12.509-9.088L144.6,312.2,50.531,217.37a8.7,8.7,0,0,1,4.778-14.706L187.15,181.238,248.269,62.471a8.694,8.694,0,0,1,15.462,0L324.85,181.238l131.841,21.426A8.7,8.7,0,0,1,461.469,217.37Z"></path>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-5 h-5 fill-current">
-                                    <path d="M494,198.671a40.536,40.536,0,0,0-32.174-27.592L345.917,152.242,292.185,47.828a40.7,40.7,0,0,0-72.37,0L166.083,152.242,50.176,171.079a40.7,40.7,0,0,0-22.364,68.827l82.7,83.368-17.9,116.055a40.672,40.672,0,0,0,58.548,42.538L256,428.977l104.843,52.89a40.69,40.69,0,0,0,58.548-42.538l-17.9-116.055,82.7-83.368A40.538,40.538,0,0,0,494,198.671Zm-32.53,18.7L367.4,312.2l20.364,132.01a8.671,8.671,0,0,1-12.509,9.088L256,393.136,136.744,453.3a8.671,8.671,0,0,1-12.509-9.088L144.6,312.2,50.531,217.37a8.7,8.7,0,0,1,4.778-14.706L187.15,181.238,248.269,62.471a8.694,8.694,0,0,1,15.462,0L324.85,181.238l131.841,21.426A8.7,8.7,0,0,1,461.469,217.37Z"></path>
-                                </svg>
+                                <LiaStarSolid size={18} color="orange" />
+                                <LiaStarSolid size={18} color="orange" />
+                                <LiaStarSolid size={18} color="orange" />
+                                <LiaStarSolid size={18} color="orange" />
+                            </div>
+                        </div>
+                        <div className=" space-y-2 text-sm dark:text-gray-600 mt-6 py-2">
+                            <p className="font-normal text-[18px] leading-7">“Amazing service. Excellent customer service and the work on behalf my work colleague Kirti S. from Wing is top notch. I’ve enjoyed the help and the genuine personality and willingness to learn. Also a big call out to Maryann U. my customer success manager.”</p>
 
-                            </div>
                         </div>
-                        <div className="p-4 space-y-2 text-sm dark:text-gray-600">
-                            <p>Vivamus sit amet turpis leo. Praesent varius eleifend elit, eu dictum lectus consequat vitae. Etiam ut dolor id justo fringilla finibus.</p>
-                            <p>Donec eget ultricies diam, eu molestie arcu. Etiam nec lacus eu mauris cursus venenatis. Maecenas gravida urna vitae accumsan feugiat. Vestibulum commodo, ante sit urna purus rutrum sem.</p>
+                        <div className="flex space-x-4 mt-12">
+                            <div>
+                                <Image
+                                    className="rounded-full"
+                                    src="https://i.ibb.co.com/t4h0tpS/Image.png"
+                                    width={48}
+                                    height={48}
+                                    alt="Picture of the author"
+                                />
+                            </div>
+                            <div>
+                                <h4 className="font-bold">Leroy Jenkins</h4>
+                                <p className="text-sm">Co-Founder & CEO, Living Spec </p>
+                            </div>
                         </div>
                     </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className=" flex flex-col w-full  p-6 mx-auto divide-y rounded-md dark:divide-gray-300 dark:bg-gray-50 dark:text-gray-800">
-                        <div className="flex justify-between p-4">
-                            <div className="flex space-x-4">
-                                <div>
-                                    {/* <img src="https://source.unsplash.com/100x100/?portrait" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" /> */}
-                                </div>
-                                <div>
-                                    <h4 className="font-bold">Leroy Jenkins</h4>
-                                    <span className="text-xs dark:text-gray-600">2 days ago</span>
-                                </div>
-                            </div>
-                            <div className="flex items-center space-x-2 dark:text-yellow-700">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-5 h-5 fill-current">
-                                    <path d="M494,198.671a40.536,40.536,0,0,0-32.174-27.592L345.917,152.242,292.185,47.828a40.7,40.7,0,0,0-72.37,0L166.083,152.242,50.176,171.079a40.7,40.7,0,0,0-22.364,68.827l82.7,83.368-17.9,116.055a40.672,40.672,0,0,0,58.548,42.538L256,428.977l104.843,52.89a40.69,40.69,0,0,0,58.548-42.538l-17.9-116.055,82.7-83.368A40.538,40.538,0,0,0,494,198.671Zm-32.53,18.7L367.4,312.2l20.364,132.01a8.671,8.671,0,0,1-12.509,9.088L256,393.136,136.744,453.3a8.671,8.671,0,0,1-12.509-9.088L144.6,312.2,50.531,217.37a8.7,8.7,0,0,1,4.778-14.706L187.15,181.238,248.269,62.471a8.694,8.694,0,0,1,15.462,0L324.85,181.238l131.841,21.426A8.7,8.7,0,0,1,461.469,217.37Z"></path>
-                                </svg>
-                                <span className="text-xl font-bold">4.5</span>
-                            </div>
-                        </div>
-                        <div className="p-4 space-y-2 text-sm dark:text-gray-600">
-                            <p>Vivamus sit amet turpis leo. Praesent varius eleifend elit, eu dictum lectus consequat vitae. Etiam ut dolor id justo fringilla finibus.</p>
-                            <p>Donec eget ultricies diam, eu molestie arcu. Etiam nec lacus eu mauris cursus venenatis. Maecenas gravida urna vitae accumsan feugiat. Vestibulum commodo, ante sit urna purus rutrum sem.</p>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className=" flex flex-col w-full  p-6 mx-auto divide-y rounded-md dark:divide-gray-300 dark:bg-gray-50 dark:text-gray-800">
-                        <div className="flex justify-between p-4">
-                            <div className="flex space-x-4">
-                                <div>
-                                    {/* <img src="https://source.unsplash.com/100x100/?portrait" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" /> */}
-                                </div>
-                                <div>
-                                    <h4 className="font-bold">Leroy Jenkins</h4>
-                                    <span className="text-xs dark:text-gray-600">2 days ago</span>
-                                </div>
-                            </div>
-                            <div className="flex items-center space-x-2 dark:text-yellow-700">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-5 h-5 fill-current">
-                                    <path d="M494,198.671a40.536,40.536,0,0,0-32.174-27.592L345.917,152.242,292.185,47.828a40.7,40.7,0,0,0-72.37,0L166.083,152.242,50.176,171.079a40.7,40.7,0,0,0-22.364,68.827l82.7,83.368-17.9,116.055a40.672,40.672,0,0,0,58.548,42.538L256,428.977l104.843,52.89a40.69,40.69,0,0,0,58.548-42.538l-17.9-116.055,82.7-83.368A40.538,40.538,0,0,0,494,198.671Zm-32.53,18.7L367.4,312.2l20.364,132.01a8.671,8.671,0,0,1-12.509,9.088L256,393.136,136.744,453.3a8.671,8.671,0,0,1-12.509-9.088L144.6,312.2,50.531,217.37a8.7,8.7,0,0,1,4.778-14.706L187.15,181.238,248.269,62.471a8.694,8.694,0,0,1,15.462,0L324.85,181.238l131.841,21.426A8.7,8.7,0,0,1,461.469,217.37Z"></path>
-                                </svg>
-                                <span className="text-xl font-bold">4.5</span>
-                            </div>
-                        </div>
-                        <div className="p-4 space-y-2 text-sm dark:text-gray-600">
-                            <p>Vivamus sit amet turpis leo. Praesent varius eleifend elit, eu dictum lectus consequat vitae. Etiam ut dolor id justo fringilla finibus.</p>
-                            <p>Donec eget ultricies diam, eu molestie arcu. Etiam nec lacus eu mauris cursus venenatis. Maecenas gravida urna vitae accumsan feugiat. Vestibulum commodo, ante sit urna purus rutrum sem.</p>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className=" flex flex-col w-full  p-6 mx-auto divide-y rounded-md dark:divide-gray-300 dark:bg-gray-50 dark:text-gray-800">
-                        <div className="flex justify-between p-4">
-                            <div className="flex space-x-4">
-                                <div>
-                                    {/* <img src="https://source.unsplash.com/100x100/?portrait" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" /> */}
-                                </div>
-                                <div>
-                                    <h4 className="font-bold">Leroy Jenkins</h4>
-                                    <span className="text-xs dark:text-gray-600">2 days ago</span>
-                                </div>
-                            </div>
-                            <div className="flex items-center space-x-2 dark:text-yellow-700">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-5 h-5 fill-current">
-                                    <path d="M494,198.671a40.536,40.536,0,0,0-32.174-27.592L345.917,152.242,292.185,47.828a40.7,40.7,0,0,0-72.37,0L166.083,152.242,50.176,171.079a40.7,40.7,0,0,0-22.364,68.827l82.7,83.368-17.9,116.055a40.672,40.672,0,0,0,58.548,42.538L256,428.977l104.843,52.89a40.69,40.69,0,0,0,58.548-42.538l-17.9-116.055,82.7-83.368A40.538,40.538,0,0,0,494,198.671Zm-32.53,18.7L367.4,312.2l20.364,132.01a8.671,8.671,0,0,1-12.509,9.088L256,393.136,136.744,453.3a8.671,8.671,0,0,1-12.509-9.088L144.6,312.2,50.531,217.37a8.7,8.7,0,0,1,4.778-14.706L187.15,181.238,248.269,62.471a8.694,8.694,0,0,1,15.462,0L324.85,181.238l131.841,21.426A8.7,8.7,0,0,1,461.469,217.37Z"></path>
-                                </svg>
-                                <span className="text-xl font-bold">4.5</span>
-                            </div>
-                        </div>
-                        <div className="p-4 space-y-2 text-sm dark:text-gray-600">
-                            <p>Vivamus sit amet turpis leo. Praesent varius eleifend elit, eu dictum lectus consequat vitae. Etiam ut dolor id justo fringilla finibus.</p>
-                            <p>Donec eget ultricies diam, eu molestie arcu. Etiam nec lacus eu mauris cursus venenatis. Maecenas gravida urna vitae accumsan feugiat. Vestibulum commodo, ante sit urna purus rutrum sem.</p>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className=" flex flex-col w-full  p-6 mx-auto divide-y rounded-md dark:divide-gray-300 dark:bg-gray-50 dark:text-gray-800">
-                        <div className="flex justify-between p-4">
-                            <div className="flex space-x-4">
-                                <div>
-                                    {/* <img src="https://source.unsplash.com/100x100/?portrait" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" /> */}
-                                </div>
-                                <div>
-                                    <h4 className="font-bold">Leroy Jenkins</h4>
-                                    <span className="text-xs dark:text-gray-600">2 days ago</span>
-                                </div>
-                            </div>
-                            <div className="flex items-center space-x-2 dark:text-yellow-700">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-5 h-5 fill-current">
-                                    <path d="M494,198.671a40.536,40.536,0,0,0-32.174-27.592L345.917,152.242,292.185,47.828a40.7,40.7,0,0,0-72.37,0L166.083,152.242,50.176,171.079a40.7,40.7,0,0,0-22.364,68.827l82.7,83.368-17.9,116.055a40.672,40.672,0,0,0,58.548,42.538L256,428.977l104.843,52.89a40.69,40.69,0,0,0,58.548-42.538l-17.9-116.055,82.7-83.368A40.538,40.538,0,0,0,494,198.671Zm-32.53,18.7L367.4,312.2l20.364,132.01a8.671,8.671,0,0,1-12.509,9.088L256,393.136,136.744,453.3a8.671,8.671,0,0,1-12.509-9.088L144.6,312.2,50.531,217.37a8.7,8.7,0,0,1,4.778-14.706L187.15,181.238,248.269,62.471a8.694,8.694,0,0,1,15.462,0L324.85,181.238l131.841,21.426A8.7,8.7,0,0,1,461.469,217.37Z"></path>
-                                </svg>
-                                <span className="text-xl font-bold">4.5</span>
-                            </div>
-                        </div>
-                        <div className="p-4 space-y-2 text-sm dark:text-gray-600">
-                            <p>Vivamus sit amet turpis leo. Praesent varius eleifend elit, eu dictum lectus consequat vitae. Etiam ut dolor id justo fringilla finibus.</p>
-                            <p>Donec eget ultricies diam, eu molestie arcu. Etiam nec lacus eu mauris cursus venenatis. Maecenas gravida urna vitae accumsan feugiat. Vestibulum commodo, ante sit urna purus rutrum sem.</p>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className=" flex flex-col w-full  p-6 mx-auto divide-y rounded-md dark:divide-gray-300 dark:bg-gray-50 dark:text-gray-800">
-                        <div className="flex justify-between p-4">
-                            <div className="flex space-x-4">
-                                <div>
-                                    {/* <img src="https://source.unsplash.com/100x100/?portrait" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" /> */}
-                                </div>
-                                <div>
-                                    <h4 className="font-bold">Leroy Jenkins</h4>
-                                    <span className="text-xs dark:text-gray-600">2 days ago</span>
-                                </div>
-                            </div>
-                            <div className="flex items-center space-x-2 dark:text-yellow-700">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-5 h-5 fill-current">
-                                    <path d="M494,198.671a40.536,40.536,0,0,0-32.174-27.592L345.917,152.242,292.185,47.828a40.7,40.7,0,0,0-72.37,0L166.083,152.242,50.176,171.079a40.7,40.7,0,0,0-22.364,68.827l82.7,83.368-17.9,116.055a40.672,40.672,0,0,0,58.548,42.538L256,428.977l104.843,52.89a40.69,40.69,0,0,0,58.548-42.538l-17.9-116.055,82.7-83.368A40.538,40.538,0,0,0,494,198.671Zm-32.53,18.7L367.4,312.2l20.364,132.01a8.671,8.671,0,0,1-12.509,9.088L256,393.136,136.744,453.3a8.671,8.671,0,0,1-12.509-9.088L144.6,312.2,50.531,217.37a8.7,8.7,0,0,1,4.778-14.706L187.15,181.238,248.269,62.471a8.694,8.694,0,0,1,15.462,0L324.85,181.238l131.841,21.426A8.7,8.7,0,0,1,461.469,217.37Z"></path>
-                                </svg>
-                                <span className="text-xl font-bold">4.5</span>
-                            </div>
-                        </div>
-                        <div className="p-4 space-y-2 text-sm dark:text-gray-600">
-                            <p>Vivamus sit amet turpis leo. Praesent varius eleifend elit, eu dictum lectus consequat vitae. Etiam ut dolor id justo fringilla finibus.</p>
-                            <p>Donec eget ultricies diam, eu molestie arcu. Etiam nec lacus eu mauris cursus venenatis. Maecenas gravida urna vitae accumsan feugiat. Vestibulum commodo, ante sit urna purus rutrum sem.</p>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className=" flex flex-col w-full  p-6 mx-auto divide-y rounded-md dark:divide-gray-300 dark:bg-gray-50 dark:text-gray-800">
-                        <div className="flex justify-between p-4">
-                            <div className="flex space-x-4">
-                                <div>
-                                    {/* <img src="https://source.unsplash.com/100x100/?portrait" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" /> */}
-                                </div>
-                                <div>
-                                    <h4 className="font-bold">Leroy Jenkins</h4>
-                                    <span className="text-xs dark:text-gray-600">2 days ago</span>
-                                </div>
-                            </div>
-                            <div className="flex items-center space-x-2 dark:text-yellow-700">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-5 h-5 fill-current">
-                                    <path d="M494,198.671a40.536,40.536,0,0,0-32.174-27.592L345.917,152.242,292.185,47.828a40.7,40.7,0,0,0-72.37,0L166.083,152.242,50.176,171.079a40.7,40.7,0,0,0-22.364,68.827l82.7,83.368-17.9,116.055a40.672,40.672,0,0,0,58.548,42.538L256,428.977l104.843,52.89a40.69,40.69,0,0,0,58.548-42.538l-17.9-116.055,82.7-83.368A40.538,40.538,0,0,0,494,198.671Zm-32.53,18.7L367.4,312.2l20.364,132.01a8.671,8.671,0,0,1-12.509,9.088L256,393.136,136.744,453.3a8.671,8.671,0,0,1-12.509-9.088L144.6,312.2,50.531,217.37a8.7,8.7,0,0,1,4.778-14.706L187.15,181.238,248.269,62.471a8.694,8.694,0,0,1,15.462,0L324.85,181.238l131.841,21.426A8.7,8.7,0,0,1,461.469,217.37Z"></path>
-                                </svg>
-                                <span className="text-xl font-bold">4.5</span>
-                            </div>
-                        </div>
-                        <div className="p-4 space-y-2 text-sm dark:text-gray-600">
-                            <p>Vivamus sit amet turpis leo. Praesent varius eleifend elit, eu dictum lectus consequat vitae. Etiam ut dolor id justo fringilla finibus.</p>
-                            <p>Donec eget ultricies diam, eu molestie arcu. Etiam nec lacus eu mauris cursus venenatis. Maecenas gravida urna vitae accumsan feugiat. Vestibulum commodo, ante sit urna purus rutrum sem.</p>
-                        </div>
-                    </div>
-                </SwiperSlide>
+                </div>
+                <div className="keen-slider__slide number-slide2">
+                    <div className="container flex flex-col w-[400px] h-[418px]  p-6 m-0  rounded-md bg-[#eef3ff]">
+                        <div className="flex justify-between ">
+                            <div>
+                                <Image
 
-            </Swiper>
+                                    src="https://i.ibb.co.com/rckpwZr/Logo-2.png"
+                                    width={76}
+                                    height={28}
+                                    alt="Clutch"
+                                />
+                            </div>
+                            <div className="flex items-center space-x-2 dark:text-yellow-700">
+                                <LiaStarSolid size={18} color="orange" />
+                                <LiaStarSolid size={18} color="orange" />
+                                <LiaStarSolid size={18} color="orange" />
+                                <LiaStarSolid size={18} color="orange" />
+                            </div>
+                        </div>
+                        <div className=" space-y-2 text-sm dark:text-gray-600 mt-6 py-2">
+                            <p className="font-normal text-[18px] leading-7">“Amazing service. Excellent customer service and the work on behalf my work colleague Kirti S. from Wing is top notch. I’ve enjoyed the help and the genuine personality and willingness to learn. Also a big call out to Maryann U. my customer success manager.”</p>
+
+                        </div>
+                        <div className="flex space-x-4 mt-12">
+                            <div>
+                                <Image
+                                    className="rounded-full"
+                                    src="https://i.ibb.co.com/t4h0tpS/Image.png"
+                                    width={48}
+                                    height={48}
+                                    alt="Picture of the author"
+                                />
+                            </div>
+                            <div>
+                                <h4 className="font-bold">Leroy Jenkins</h4>
+                                <p className="text-sm">Co-Founder & CEO, Living Spec </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="keen-slider__slide number-slide2">
+                    <div className="container flex flex-col w-[400px] h-[418px]  p-6 m-0  rounded-md bg-[#eef3ff]">
+                        <div className="flex justify-between ">
+                            <div>
+                                <Image
+
+                                    src="https://i.ibb.co.com/rckpwZr/Logo-2.png"
+                                    width={76}
+                                    height={28}
+                                    alt="Clutch"
+                                />
+                            </div>
+                            <div className="flex items-center space-x-2 dark:text-yellow-700">
+                                <LiaStarSolid size={18} color="orange" />
+                                <LiaStarSolid size={18} color="orange" />
+                                <LiaStarSolid size={18} color="orange" />
+                                <LiaStarSolid size={18} color="orange" />
+                            </div>
+                        </div>
+                        <div className=" space-y-2 text-sm dark:text-gray-600 mt-6 py-2">
+                            <p className="font-normal text-[18px] leading-7">“Amazing service. Excellent customer service and the work on behalf my work colleague Kirti S. from Wing is top notch. I’ve enjoyed the help and the genuine personality and willingness to learn. Also a big call out to Maryann U. my customer success manager.”</p>
+
+                        </div>
+                        <div className="flex space-x-4 mt-12">
+                            <div>
+                                <Image
+                                    className="rounded-full"
+                                    src="https://i.ibb.co.com/t4h0tpS/Image.png"
+                                    width={48}
+                                    height={48}
+                                    alt="Picture of the author"
+                                />
+                            </div>
+                            <div>
+                                <h4 className="font-bold">Leroy Jenkins</h4>
+                                <p className="text-sm">Co-Founder & CEO, Living Spec </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="keen-slider__slide number-slide2">
+                    <div className="container flex flex-col w-[400px] h-[418px]  p-6 m-0  rounded-md bg-[#eef3ff]">
+                        <div className="flex justify-between ">
+                            <div>
+                                <Image
+
+                                    src="https://i.ibb.co.com/rckpwZr/Logo-2.png"
+                                    width={76}
+                                    height={28}
+                                    alt="Clutch"
+                                />
+                            </div>
+                            <div className="flex items-center space-x-2 dark:text-yellow-700">
+                                <LiaStarSolid size={18} color="orange" />
+                                <LiaStarSolid size={18} color="orange" />
+                                <LiaStarSolid size={18} color="orange" />
+                                <LiaStarSolid size={18} color="orange" />
+                            </div>
+                        </div>
+                        <div className=" space-y-2 text-sm dark:text-gray-600 mt-6 py-2">
+                            <p className="font-normal text-[18px] leading-7">“Amazing service. Excellent customer service and the work on behalf my work colleague Kirti S. from Wing is top notch. I’ve enjoyed the help and the genuine personality and willingness to learn. Also a big call out to Maryann U. my customer success manager.”</p>
+
+                        </div>
+                        <div className="flex space-x-4 mt-12">
+                            <div>
+                                <Image
+                                    className="rounded-full"
+                                    src="https://i.ibb.co.com/t4h0tpS/Image.png"
+                                    width={48}
+                                    height={48}
+                                    alt="Picture of the author"
+                                />
+                            </div>
+                            <div>
+                                <h4 className="font-bold">Leroy Jenkins</h4>
+                                <p className="text-sm">Co-Founder & CEO, Living Spec </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="keen-slider__slide number-slide2">
+                    <div className="container flex flex-col w-[400px] h-[418px]  p-6 m-0  rounded-md bg-[#eef3ff]">
+                        <div className="flex justify-between ">
+                            <div>
+                                <Image
+
+                                    src="https://i.ibb.co.com/rckpwZr/Logo-2.png"
+                                    width={76}
+                                    height={28}
+                                    alt="Clutch"
+                                />
+                            </div>
+                            <div className="flex items-center space-x-2 dark:text-yellow-700">
+                                <LiaStarSolid size={18} color="orange" />
+                                <LiaStarSolid size={18} color="orange" />
+                                <LiaStarSolid size={18} color="orange" />
+                                <LiaStarSolid size={18} color="orange" />
+                            </div>
+                        </div>
+                        <div className=" space-y-2 text-sm dark:text-gray-600 mt-6 py-2">
+                            <p className="font-normal text-[18px] leading-7">“Amazing service. Excellent customer service and the work on behalf my work colleague Kirti S. from Wing is top notch. I’ve enjoyed the help and the genuine personality and willingness to learn. Also a big call out to Maryann U. my customer success manager.”</p>
+
+                        </div>
+                        <div className="flex space-x-4 mt-12">
+                            <div>
+                                <Image
+                                    className="rounded-full"
+                                    src="https://i.ibb.co.com/t4h0tpS/Image.png"
+                                    width={48}
+                                    height={48}
+                                    alt="Picture of the author"
+                                />
+                            </div>
+                            <div>
+                                <h4 className="font-bold">Leroy Jenkins</h4>
+                                <p className="text-sm">Co-Founder & CEO, Living Spec </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="keen-slider__slide number-slide2">
+                    <div className="container flex flex-col w-[400px] h-[418px]  p-6 m-0  rounded-md bg-[#eef3ff]">
+                        <div className="flex justify-between ">
+                            <div>
+                                <Image
+
+                                    src="https://i.ibb.co.com/rckpwZr/Logo-2.png"
+                                    width={76}
+                                    height={28}
+                                    alt="Clutch"
+                                />
+                            </div>
+                            <div className="flex items-center space-x-2 dark:text-yellow-700">
+                                <LiaStarSolid size={18} color="orange" />
+                                <LiaStarSolid size={18} color="orange" />
+                                <LiaStarSolid size={18} color="orange" />
+                                <LiaStarSolid size={18} color="orange" />
+                            </div>
+                        </div>
+                        <div className=" space-y-2 text-sm dark:text-gray-600 mt-6 py-2">
+                            <p className="font-normal text-[18px] leading-7">“Amazing service. Excellent customer service and the work on behalf my work colleague Kirti S. from Wing is top notch. I’ve enjoyed the help and the genuine personality and willingness to learn. Also a big call out to Maryann U. my customer success manager.”</p>
+
+                        </div>
+                        <div className="flex space-x-4 mt-12">
+                            <div>
+                                <Image
+                                    className="rounded-full"
+                                    src="https://i.ibb.co.com/t4h0tpS/Image.png"
+                                    width={48}
+                                    height={48}
+                                    alt="Picture of the author"
+                                />
+                            </div>
+                            <div>
+                                <h4 className="font-bold">Leroy Jenkins</h4>
+                                <p className="text-sm">Co-Founder & CEO, Living Spec </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
     );
 };
