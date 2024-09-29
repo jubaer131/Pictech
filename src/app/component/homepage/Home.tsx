@@ -1,9 +1,12 @@
+"use client"
+
 import React from 'react';
 
 import Banner from './Banner';
 import Navbar from '../share/Navbar';
 import PowerfulFeature from './PowerfulFeature';
 import Slider from './Slider';
+import SeerviceBussiness from './SeerviceBussiness';
 
 const Home = () => {
     return (
@@ -19,7 +22,10 @@ const Home = () => {
             </div>
             <div>
                 <Slider></Slider>
+                <SeerviceBussiness></SeerviceBussiness>
             </div>
+
+
         </>
     );
 };

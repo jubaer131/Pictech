@@ -16,6 +16,7 @@ const PowerfulFeature = () => {
                     <ul className='space-y-3'>
                         <li className=" flex items-center gap-3">
                             <div className='bg-[#f2f2f2] shadow-sm p-1 rounded-sm'><span className='text-[16px]'><PiCheck /></span></div>
+                            {/* <input className='className=" text-green-500 bg-green-500 accent-green-600 w-6 h-6' type="checkbox" /> */}
                             <p>Fully customisable for developers</p>
                         </li>
                         <li className=" flex items-center gap-3">
