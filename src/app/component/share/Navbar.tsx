@@ -5,8 +5,8 @@ import Image from 'next/image'
 
 const Navbar = () => {
     return (
-        <div className='w-[75%] mx-auto'>
-            <div className="navbar ">
+        <div className='lg:w-[75%] mx-auto'>
+            <div className="navbar lg:p-5">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -45,36 +45,36 @@ const Navbar = () => {
                     /></a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <div className="dropdown dropdown-hover ">
-                        <div tabIndex={0} role="button" className="flex items-center hover:text-[#2b5bfd]   m-2">Home <span className="text-2xl"><MdOutlineExpandMore /></span></div>
-                        <ul tabIndex={0} className="dropdown-content menu bg-base-100  z-[1] w-36 p-2 shadow-md border-t-4 border-[#2b5bfd]">
+                    <div className="dropdown  ">
+                        <div tabIndex={0} role="button" className="flex items-center hover:text-[#2b5bfd] font-medium  lg:pr-4">Home <span className="text-2xl"><MdOutlineExpandMore /></span></div>
+                        <ul tabIndex={0} className="dropdown-content menu bg-base-100 mt-6  z-[1]  w-52 h-32 rounded-md  p-4 shadow-md border-t-4 border-[#2b5bfd]">
                             <li className=' hover:text-[#2b5bfd] '><a>Home 1</a></li>
-                            <hr className="my-2 border-[#2b5bfd]" />
+                            <hr className="my-2 border-gray-200" />
                             <li className=' hover:text-[#2b5bfd]'><a >Home2</a></li>
                         </ul>
                     </div>
-                    <div className="dropdown dropdown-hover ">
-                        <div tabIndex={0} role="button" className="flex items-center hover:text-[#2b5bfd]   m-2">Pages <span className="text-2xl"><MdOutlineExpandMore /></span></div>
-                        <ul tabIndex={0} className="dropdown-content menu bg-base-100  z-[1] w-36 p-2 shadow-md border-t-4 border-[#2b5bfd]">
+                    <div className="dropdown  ">
+                        <div tabIndex={0} role="button" className="flex items-center hover:text-[#2b5bfd] font-medium  lg:pr-4">Pages <span className="text-2xl"><MdOutlineExpandMore /></span></div>
+                        <ul tabIndex={0} className="dropdown-content w-52 h-32 mt-6 menu bg-base-100 rounded-md  z-[1]  p-4 shadow-md border-t-4 border-[#2b5bfd]">
                             <li className=' hover:text-[#2b5bfd] '><a>Home 1</a></li>
-                            <hr className="my-2 border-[#2b5bfd]" />
+                            <hr className="my-2 border-gray-200" />
                             <li className=' hover:text-[#2b5bfd]'><a >Home2</a></li>
                         </ul>
                     </div>
 
                     <div>
-                        <Link className="flex items-center justify-center m-2 hover:text-[#2b5bfd]" href="">Protfolio <span className="text-2xl"><MdOutlineExpandMore /></span></Link>
+                        <Link className="flex items-center justify-center lg:pr-4 hover:text-[#2b5bfd] font-medium" href="">Protfolio <span className="text-2xl"><MdOutlineExpandMore /></span></Link>
                     </div>
                     <div>
-                        <Link className="flex items-center justify-center m-2 hover:text-[#2b5bfd]" href="">Blog <span className="text-2xl"><MdOutlineExpandMore /></span></Link>
+                        <Link className="flex items-center justify-center lg:pr-4 hover:text-[#2b5bfd] font-medium" href="">Blog <span className="text-2xl"><MdOutlineExpandMore /></span></Link>
                     </div>
                     <div>
-                        <Link className='hover:text-[#2b5bfd] m-2' href=""> Contract Us</Link>
+                        <Link className='hover:text-[#2b5bfd] lg:pr-4 font-medium' href=""> Contract Us</Link>
                     </div>
                 </div>
                 <div className="navbar-end space-x-3">
-                    <Link href=""><button className='btn'>Login</button></Link>
-                    <Link href=""><button className='btn bg-[#2b5bfd] text-white'>Creat Free account</button></Link>
+                    <Link href=""><button className='btn hover:text-[#2b5bfd] hover:bg-white border '>Login</button></Link>
+                    <Link href=""><button className='btn bg-[#2b5bfd] text-white hover:text-[#2b5bfd] hover:bg-white border '>Creat Free account</button></Link>
                 </div>
             </div>
         </div>

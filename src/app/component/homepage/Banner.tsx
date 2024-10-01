@@ -7,15 +7,12 @@ const Banner = () => {
     return (
         <>
             <div
-                className="hero h-[668px] container mx-auto"
-                style={{
-                    backgroundImage: "url()",
-                }}>
+                className="hero lg:h-[668px] container mx-auto">
                 <div className=" "></div>
-                <div className='flex justify-between items-center w-full mt-28' >
-                    <div className="text-start w-1/2  ml-16">
-                        <div className="w-[552px]">
-                            <h1 className="mb-5 text-6xl font-bold">Manage Clients <br /> & Teams in Your Digital Business</h1>
+                <div className='lg:flex  justify-between items-center w-full lg:mt-28 mt-10' >
+                    <div className="lg:text-start text-center lg:w-1/2  lg:ml-16">
+                        <div className="lg:w-[552px]">
+                            <h1 className="mb-5 lg:text-6xl t text-2xl font-bold">Manage Clients <br /> & Teams in Your Digital Business</h1>
                             <p className="mb-5">
                                 A powerful, agile, all-in-one recruiting tool designed with productivity and loaded with features more successfully
                             </p>
@@ -33,9 +30,9 @@ const Banner = () => {
                     </div>
                 </div>
             </div >
-            <div className='max-w-[1600px] mx-auto mt-20'>
+            <div className='lg:max-w-[1600px] mx-auto lg:mt-20'>
                 <h2 className='text-center'>Trusted by agencies managing 100+ client projects daily</h2>
-                <div className='flex items-center justify-between pt-8 pb-12'>
+                <div className='lg:flex items-center justify-between  pt-8 pb-12'>
                     <Image
 
                         src="https://i.ibb.co.com/c36XNCM/Vector-2.png"

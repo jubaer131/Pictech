@@ -1,3 +1,6 @@
+
+
+
 "use client"
 import React from "react"
 import { useKeenSlider } from "keen-slider/react"
@@ -18,13 +21,13 @@ const Slider: React.FC = () => {
 
     return (
         <>
-            <div className="text-center my-20">
-                <h1 >Don't just take our word for it</h1>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum industry's standard dummy text ever since the 1500s</p>
+            <div className="text-center lg:py-20 lg:mt-20">
+                <h1 className="text-4xl font-bold">Don't just take our word for it</h1>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum <br /> industry's standard dummy text ever since the 1500s</p>
             </div>
             <div ref={sliderRef} className="keen-slider">
                 <div className="keen-slider__slide number-slide2 ">
-                    <div className="container flex flex-col w-[400px] h-[418px]  p-6 m-0  rounded-md bg-[#eef3ff]">
+                    <div className="container flex flex-col w-[400px] h-[418px]  p-6 m-0  rounded-md bg-white">
                         <div className="flex justify-between ">
                             <div>
                                 <Image
@@ -64,7 +67,7 @@ const Slider: React.FC = () => {
                     </div>
                 </div>
                 <div className="keen-slider__slide number-slide2">
-                    <div className="container flex flex-col w-[400px] h-[418px]  p-6 m-0  rounded-md bg-[#eef3ff]">
+                    <div className="container flex flex-col w-[400px] h-[418px]  p-6 m-0  rounded-md bg-white">
                         <div className="flex justify-between ">
                             <div>
                                 <Image
@@ -104,7 +107,7 @@ const Slider: React.FC = () => {
                     </div>
                 </div>
                 <div className="keen-slider__slide number-slide2">
-                    <div className="container flex flex-col w-[400px] h-[418px]  p-6 m-0  rounded-md bg-[#eef3ff]">
+                    <div className="container flex flex-col w-[400px] h-[418px]  p-6 m-0  rounded-md bg-white">
                         <div className="flex justify-between ">
                             <div>
                                 <Image
@@ -144,7 +147,7 @@ const Slider: React.FC = () => {
                     </div>
                 </div>
                 <div className="keen-slider__slide number-slide2">
-                    <div className="container flex flex-col w-[400px] h-[418px]  p-6 m-0  rounded-md bg-[#eef3ff]">
+                    <div className="container flex flex-col w-[400px] h-[418px]  p-6 m-0  rounded-md bg-white">
                         <div className="flex justify-between ">
                             <div>
                                 <Image
@@ -184,7 +187,7 @@ const Slider: React.FC = () => {
                     </div>
                 </div>
                 <div className="keen-slider__slide number-slide2">
-                    <div className="container flex flex-col w-[400px] h-[418px]  p-6 m-0  rounded-md bg-[#eef3ff]">
+                    <div className="container flex flex-col w-[400px] h-[418px]  p-6 m-0  rounded-md bg-white">
                         <div className="flex justify-between ">
                             <div>
                                 <Image
@@ -224,7 +227,7 @@ const Slider: React.FC = () => {
                     </div>
                 </div>
                 <div className="keen-slider__slide number-slide2">
-                    <div className="container flex flex-col w-[400px] h-[418px]  p-6 m-0  rounded-md bg-[#eef3ff]">
+                    <div className="container flex flex-col w-[400px] h-[418px]  p-6 m-0  rounded-md bg-white">
                         <div className="flex justify-between ">
                             <div>
                                 <Image

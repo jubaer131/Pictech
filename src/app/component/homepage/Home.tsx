@@ -7,6 +7,9 @@ import Navbar from '../share/Navbar';
 import PowerfulFeature from './PowerfulFeature';
 import Slider from './Slider';
 import SeerviceBussiness from './SeerviceBussiness';
+import AccordionComponent from './AccordionComponent';
+import NextStap from './NextStap';
+
 
 const Home = () => {
     return (
@@ -20,12 +23,14 @@ const Home = () => {
             <div>
                 <PowerfulFeature></PowerfulFeature>
             </div>
-            <div>
+            <div className='bg-[#f4f7ff]'>
                 <Slider></Slider>
                 <SeerviceBussiness></SeerviceBussiness>
             </div>
-
-
+            <div className='bg-[#faf4ec]'>
+                < AccordionComponent></AccordionComponent>
+                <NextStap></NextStap>
+            </div>
         </>
     );
 };
