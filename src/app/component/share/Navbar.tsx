@@ -48,7 +48,7 @@ const Navbar = () => {
                     <div className="dropdown  ">
                         <div tabIndex={0} role="button" className="flex items-center hover:text-[#2b5bfd] font-medium  lg:pr-6">Home <span className="text-xl"><MdOutlineExpandMore /></span></div>
                         <ul tabIndex={0} className="dropdown-content menu bg-base-100 mt-6  z-[1]  w-52 h-32 rounded-md  p-4 shadow-md border-t-4 border-[#2b5bfd]">
-                            <li className=' hover:text-[#2b5bfd] '><a>Home 1</a></li>
+                            <li className=' hover:text-[#2b5bfd] '><Link href="/">Home 1</Link></li>
                             <hr className="my-2 border-gray-200" />
                             <li className=' hover:text-[#2b5bfd]'><a >Home2</a></li>
                         </ul>
@@ -56,9 +56,9 @@ const Navbar = () => {
                     <div className="dropdown  ">
                         <div tabIndex={0} role="button" className="flex items-center hover:text-[#2b5bfd] font-medium  ">Pages <span className="text-xl"><MdOutlineExpandMore /></span></div>
                         <ul tabIndex={0} className="dropdown-content w-52 h-32 mt-6 menu bg-base-100 rounded-md  z-[1]  p-4 shadow-md border-t-4 border-[#2b5bfd]">
-                            <li className=' hover:text-[#2b5bfd] '><a>Home 1</a></li>
+                            <li className=' hover:text-[#2b5bfd] '><Link href="/aboutus">About Us</Link></li>
                             <hr className="my-2 border-gray-200" />
-                            <li className=' hover:text-[#2b5bfd]'><a >Home2</a></li>
+                            <li className=' hover:text-[#2b5bfd]'><Link href="/service">Services</Link></li>
                         </ul>
                     </div>
 
@@ -69,7 +69,7 @@ const Navbar = () => {
                         <Link className="flex items-center justify-center lg:pr-6 hover:text-[#2b5bfd] font-medium" href="">Blog <span className="text-xl"><MdOutlineExpandMore /></span></Link>
                     </div>
                     <div>
-                        <Link className='hover:text-[#2b5bfd] lg:pr-5 font-medium' href=""> Contract Us</Link>
+                        <Link className='hover:text-[#2b5bfd] lg:pr-5 font-medium' href="/contractus"> Contract Us</Link>
                     </div>
                 </div>
                 <div className="navbar-end space-x-3">

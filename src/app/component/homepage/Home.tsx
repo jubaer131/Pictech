@@ -23,7 +23,7 @@ const Home = () => {
             <div>
                 <PowerfulFeature></PowerfulFeature>
             </div>
-            <div className='bg-[#f4f7ff]'>
+            <div className='bg-[#f4f7ff] lg:mt-20 pt-10'>
                 <Slider></Slider>
                 <SeerviceBussiness></SeerviceBussiness>
             </div>
