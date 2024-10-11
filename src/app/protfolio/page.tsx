@@ -1,11 +1,14 @@
 "use client"
-
 import React from 'react';
 import Navbar from '../component/share/Navbar';
 import Link from 'next/link';
 import MyTab from '../component/ProtFolio/MyTab';
 
 const page = () => {
+
+
+
+
     return (
         <>
             <div style={{
@@ -25,8 +28,10 @@ const page = () => {
                     </div>
                 </div>
             </div>
-            <div className='lg:w-[466px] mx-auto my-12'>
-                <MyTab></MyTab>
+            <div className='lg:w-[1272px] mx-auto'>
+
+                <MyTab ></MyTab>
+
             </div>
         </>
     );
