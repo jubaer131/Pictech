@@ -66,7 +66,7 @@ const Navbar = () => {
                         <Link className="flex items-center justify-center lg:pr-6 lg:pl-6 hover:text-[#2b5bfd] font-medium" href="/protfolio">Protfolio <span className="text-xl"><MdOutlineExpandMore /></span></Link>
                     </div>
                     <div>
-                        <Link className="flex items-center justify-center lg:pr-6 hover:text-[#2b5bfd] font-medium" href="">Blog <span className="text-xl"><MdOutlineExpandMore /></span></Link>
+                        <Link className="flex items-center justify-center lg:pr-6 hover:text-[#2b5bfd] font-medium" href="/blog">Blog <span className="text-xl"><MdOutlineExpandMore /></span></Link>
                     </div>
                     <div>
                         <Link className='hover:text-[#2b5bfd] lg:pr-5 font-medium' href="/contractus"> Contract Us</Link>

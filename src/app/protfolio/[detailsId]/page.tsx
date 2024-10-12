@@ -1,26 +1,29 @@
 "use client"
 import Navbar from '@/app/component/share/Navbar';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 
 const page = ({ params }) => {
 
+    const [Portfolio, setPortfolio] = useState([])
 
+    useEffect(() => {
+        fetch("http://localhost:8000/protfolio")
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setPortfolio(data)
+            })
+            .catch(error => console.error("Error fetching portfolio:", error));
+    }, [])
 
+    const { detailsId } = params
 
+    const findprotfolio = Portfolio.find(product => product._id === detailsId);
 
-
-
-
-
-    // const specificProduct = products.find(product => product._id === params.productId);
-
-    // console.log(specificProduct)
-
-    console.log(params.productId)
-
+    console.log(findprotfolio)
 
 
     return (
@@ -44,81 +47,78 @@ const page = ({ params }) => {
                     </div>
                 </div>
             </div>
-            {/* second section */}
 
-            {/* {specificProduct ? (
-                <button key={specificProduct._id}>check</button>
-            ) : (
-                <p>No product found.</p>
-            )} */}
 
             <div className='lg:w-[1297px] mx-auto mt-16'>
-                <Image
+                <div className="w-full h-auto relative" style={{ aspectRatio: '1296 / 700' }}>
+                    <Image
+                        src={findprotfolio?.image}
+                        layout="fill"
+                        objectFit="cover"
+                        alt="Picture of the author"
+                    />
+                </div>
 
-                    src=''
-                    width={1296}
-                    height={700}
-                    alt="Picture of the author"
-                />
+
                 <div className='lg:w-[1048px] mx-auto my-10 space-y-10 p-4'>
                     <div className='space-y-10 mb-20'>
-                        <h1 className='text-[48px] font-bold'>about</h1>
-                        <p>Imagine creating your own software without typing a single code line.  Your starting point? No.Code.Tech. Picture it as your ultimate toolkit,  packed with resources, tutorials, and insights that enable anyone to  dive into software creation, regardless of their level of technical  know-how  <br /> <br /> <br />Imagine creating your own software without typing a single code line.  Your starting point? No.Code.Tech. Picture it as your ultimate toolkit,  packed with resources, tutorials, and insights that enable anyone to  dive into software creation, regardless of their level of technical  know-how</p>
+                        <h1 className='text-[48px] font-bold'>About Project</h1>
+                        <p className='text-[20px]'>{findprotfolio?.description}</p>
+                        <p className='text-[20px]'>{findprotfolio?.description1}</p>
                         <button className='text-[16px]  rounded-none border-b-2 border-[#2B5BFD] pb-2 '>Visit Website</button>
                     </div>
                     <hr />
                     <div className='flex justify-between items-center '>
                         <div className='lg:w-[282px]'>
-                            <h5>Client</h5>
-                            <h2>Stuart Watkins</h2>
+                            <h5 className='text-[18px] text-[#7D7D82]'>Client:</h5>
+                            <h2 className='text-[22px] font-semibold'>Stuart Watkins</h2>
                         </div>
                         <div className='lg:w-[282px]'>
-                            <h5>Industry</h5>
-                            <h2>Sass & Software</h2>
+                            <h5 className='text-[18px] text-[#7D7D82]'>Industry:</h5>
+                            <h2 className='text-[22px] font-semibold'>Sass & Software</h2>
                         </div>
                         <div className='lg:w-[282px]'>
-                            <h5>Timeline</h5>
-                            <h2>3 Months</h2>
+                            <h5 className='text-[18px] text-[#7D7D82]'>Timeline:</h5>
+                            <h2 className='text-[22px] font-semibold'>3 Months</h2>
                         </div>
                     </div>
                 </div>
-                <div className=' flex justify-between items-center gap-3'>
+                <div className='lg:flex justify-between items-center '>
                     <Image
 
                         src='https://i.ibb.co.com/rp3Ksft/Image-8.png'
-                        width={636}
+                        width={638}
                         height={540}
                         alt="Picture of the author"
                     />
                     <Image
 
                         src='https://i.ibb.co.com/rp3Ksft/Image-8.png'
-                        width={636}
+                        width={638}
                         height={540}
                         alt="Picture of the author"
                     />
                 </div>
-                <div className='mt-5'>
+                <div className="w-full h-auto relative mt-5" style={{ aspectRatio: '1296 / 700' }}>
                     <Image
-
-                        src='https://i.ibb.co.com/rp3Ksft/Image-8.png'
-                        width={1296}
-                        height={700}
+                        src={findprotfolio?.image}
+                        layout="fill"
+                        objectFit="cover"
                         alt="Picture of the author"
                     />
                 </div>
-                <div className='lg:w-[1048px] lg:h-[848px] mx-auto space-y-12 py-20'>
+                <div className='lg:w-[1048px] lg:h-[848px] mx-auto space-y-8 py-10'>
                     <div>
                         <h1 className='text-[42px] font-bold'>Problems</h1>
-                        <p className='text-[22px] font-normal'>The platform initially struggled with presenting tailored resources and  educational content, often leaving users overwhelmed and leading to  abrupt exits. Our solution was to create different user-friendly paths  for content exploration, giving them compelling reasons to stay and  engage. This required a more strategic structuring of the platform,  linking diverse resources cohesively to form intuitive exploration  routes.</p>
+                        <p className='text-[20px] font-normal'>{findprotfolio?.problems?.slice(0, 600)}</p>
                     </div>
                     <div>
                         <h1 className='text-[42px] font-bold'>Challanges</h1>
-                        <p className='text-[22px] font-normal'>The platform initially struggled with presenting tailored resources and  educational content, often leaving users overwhelmed and leading to  abrupt exits. Our solution was to create different user-friendly paths  for content exploration, giving them compelling reasons to stay and  engage. This required a more strategic structuring of the platform,  linking diverse resources cohesively to form intuitive exploration  routes.</p>
+                        <p className='text-[20px] font-normal'>{findprotfolio?.challenges?.slice(0, 500)}</p>
                     </div>
                     <div>
                         <h1 className='text-[42px] font-bold'>Our Solutions</h1>
-                        <p className='text-[22px] font-normal'>The platform initially struggled with presenting tailored resources and  educational content, often leaving users overwhelmed and leading to  abrupt exits. Our solution was to create different user-friendly paths  for content exploration, giving them compelling reasons to stay and  engage. This required a more strategic structuring of the platform,  linking diverse resources cohesively to form intuitive exploration  routes.</p>
+                        <p className='text-[20px] font-normal'>{findprotfolio?.ourSolution?.slice(0, 400)}</p>
                     </div>
                 </div>
 
@@ -127,24 +127,40 @@ const page = ({ params }) => {
 
 
             {/* third section */}
-            <div className='lg:w-[1290px] mx-auto'>
-                <h1 className='text-5xl font-bold text-center my-8'>Related Projects</h1>
+            <div className='bg-[#f8f9fc]  py-20'>
+                <div className='lg:w-[1290px] mx-auto'>
+                    <h1 className='text-5xl font-bold text-center pb-10'>Related Projects</h1>
 
-                <div className=' flex justify-between items-center gap-3'>
-                    <Image
+                    <div className='flex justify-between items-center gap-3'>
+                        {
+                            Portfolio.slice(0, 2).map((item) => (
 
-                        src='https://i.ibb.co.com/rp3Ksft/Image-8.png'
-                        width={636}
-                        height={540}
-                        alt="Picture of the author"
-                    />
-                    <Image
+                                <Link key={item._id} href={`/protfolio/${item._id}`}>
+                                    <div className=" dark:bg-gray-50 dark:text-gray-800">
+                                        <Image
 
-                        src='https://i.ibb.co.com/rp3Ksft/Image-8.png'
-                        width={636}
-                        height={540}
-                        alt="Picture of the author"
-                    />
+                                            src={item.image}
+                                            width={636}
+                                            height={666}
+                                            alt="Picture of the author"
+                                        />
+                                        <div className="flex flex-col justify-between py-5 ">
+                                            <div className="space-y-2">
+                                                <h2 className="text-[28px] font-bold ">{item.title}</h2>
+                                                <p className="dark:text-gray-800">{item.typeOfBusiness}</p>
+
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </Link>
+
+
+                            ))
+                        }
+
+                    </div>
                 </div>
             </div>
         </>
