@@ -16,7 +16,7 @@ module.exports = {
     },
   },
   plugins: [
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
+
     require('daisyui'),
   ],
   daisyui: {
@@ -24,3 +24,6 @@ module.exports = {
       "coffee"],
   },
 };
+
+
+

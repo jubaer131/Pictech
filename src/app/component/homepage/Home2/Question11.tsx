@@ -1,6 +1,5 @@
 
 
-
 import React, { useState, FC } from 'react';
 
 interface QuestionProps {
@@ -9,20 +8,20 @@ interface QuestionProps {
     number: number;
 }
 
-const Question: FC<QuestionProps> = ({ question, answer, number }) => {
+const Question11: FC<QuestionProps> = ({ question, answer, number }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="border-t border-b border-gray-100  ">
+        <div className=" ">
             <div
                 className="flex justify-between items-center p-6 cursor-pointer "
                 onClick={() => setIsOpen(!isOpen)}
             >
-                <h3 className="text-lg font-semibold ">{number}. {question}</h3>
-                <button className="text-xl ">{isOpen ? 'X' : '+'}</button>
+                <h3 className="text-lg font-semibold text-white">{number}. {question}</h3>
+                <button className="text-xl text-white">{isOpen ? 'X' : '+'}</button>
             </div>
             {isOpen && (
-                <div className="p-4  text-gray-700">
+                <div className="p-4 text-white ">
                     {answer}
                 </div>
             )}
@@ -30,4 +29,4 @@ const Question: FC<QuestionProps> = ({ question, answer, number }) => {
     );
 };
 
-export default Question;
+export default Question11;

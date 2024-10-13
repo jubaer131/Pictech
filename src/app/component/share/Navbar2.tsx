@@ -1,12 +1,14 @@
+
+
 import Link from 'next/link';
 import React from 'react';
 import { MdOutlineExpandMore } from "react-icons/md";
 import Image from 'next/image'
 
-const Navbar = () => {
+const Navbar2 = () => {
     return (
         <div className='lg:w-[68%] mx-auto'>
-            <div className="navbar lg:p-5 p-3">
+            <div className="navbar lg:pt-5 ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -46,7 +48,7 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center pr-24 hidden lg:flex">
                     <div className="dropdown  ">
-                        <div tabIndex={0} role="button" className="flex items-center hover:text-[#2b5bfd] font-medium  lg:pr-6">Home <span className="text-xl"><MdOutlineExpandMore /></span></div>
+                        <div tabIndex={0} role="button" className="flex items-center hover:text-[#2b5bfd] font-medium  text-white lg:pr-6">Home <span className="text-xl"><MdOutlineExpandMore /></span></div>
                         <ul tabIndex={0} className="dropdown-content menu bg-base-100 mt-6  z-[1]  w-52 h-32 rounded-md  p-4 shadow-md border-t-4 border-[#2b5bfd]">
                             <li className=' hover:text-[#2b5bfd] '><Link href="/">Home 1</Link></li>
                             <hr className="my-2 border-gray-200" />
@@ -54,22 +56,22 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="dropdown  ">
-                        <div tabIndex={0} role="button" className="flex items-center hover:text-[#2b5bfd] font-medium  ">Pages <span className="text-xl"><MdOutlineExpandMore /></span></div>
+                        <div tabIndex={0} role="button" className="flex items-center hover:text-[#2b5bfd] font-medium   text-white">Pages <span className="text-xl"><MdOutlineExpandMore /></span></div>
                         <ul tabIndex={0} className="dropdown-content w-52 h-32 mt-6 menu bg-base-100 rounded-md  z-[1]  p-4 shadow-md border-t-4 border-[#2b5bfd]">
-                            <li className=' hover:text-[#2b5bfd] '><Link href="/aboutus">About Us</Link></li>
+                            <li className=' hover:text-[#2b5bfd]  '><Link href="/aboutus">About Us</Link></li>
                             <hr className="my-2 border-gray-200" />
-                            <li className=' hover:text-[#2b5bfd]'><Link href="/service">Services</Link></li>
+                            <li className=' hover:text-[#2b5bfd]  '><Link href="/service">Services</Link></li>
                         </ul>
                     </div>
 
                     <div>
-                        <Link className="flex items-center justify-center lg:pr-6 lg:pl-6 hover:text-[#2b5bfd] font-medium" href="/protfolio">Protfolio <span className="text-xl"><MdOutlineExpandMore /></span></Link>
+                        <Link className="flex items-center justify-center lg:pr-6 lg:pl-6 hover:text-[#2b5bfd] font-medium  text-white" href="/protfolio">Protfolio <span className="text-xl"><MdOutlineExpandMore /></span></Link>
                     </div>
                     <div>
-                        <Link className="flex items-center justify-center lg:pr-6 hover:text-[#2b5bfd] font-medium" href="/blog">Blog <span className="text-xl"><MdOutlineExpandMore /></span></Link>
+                        <Link className="flex items-center justify-center lg:pr-6 hover:text-[#2b5bfd] font-medium  text-white" href="/blog">Blog <span className="text-xl"><MdOutlineExpandMore /></span></Link>
                     </div>
                     <div>
-                        <Link className='hover:text-[#2b5bfd] lg:pr-5 font-medium' href="/contractus"> Contract Us</Link>
+                        <Link className='hover:text-[#2b5bfd] lg:pr-5 font-medium  text-white' href="/contractus "> Contract Us</Link>
                     </div>
                 </div>
                 <div className="navbar-end space-x-3">
@@ -81,4 +83,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default Navbar2;

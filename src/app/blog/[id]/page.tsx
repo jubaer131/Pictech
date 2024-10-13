@@ -1,117 +1,194 @@
+// "use client"
+// import Link from 'next/link';
+// import React, { useEffect, useState } from 'react';
+// import Image from 'next/image';
+// import Navbar from '@/app/component/share/Navbar';
+// import Comment from '@/app/component/Blog/Comment';
+// import BlogSideBar from '@/app/component/Blog/BlogSideBar';
+
+// const page = ({ params }) => {
+//     const [blog, setblog] = useState([])
+
+
+//     useEffect(() => {
+
+//         fetch(`http://localhost:8000/detail`)
+
+//             .then(res => res.json())
+//             .then(data => {
+//                 console.log(data)
+//                 setblog(data)
+
+//             });
+//     }, []);
+
+
+//     const { id } = params
+//     const blogDetails = blog.find((item) => item._id === id)
+//     console.log(blogDetails)
+//     const { date, title1, description1, description2, complexsentence, title2, description3, description4, image2, title3, description5 } = blogDetails
+
+//     return (
+//         <>
+//             <div style={{
+//                 backgroundImage: "url(https://i.ibb.co.com/WGV9tQw/Background-2.png)",
+//             }}
+//                 className='lg:h-[580px]'>
+//                 <Navbar></Navbar>
+//                 <div className='lg:h-[300px] lg:w-[1000px] mx-auto max-sm:p-6 lg:pt-28'>
+//                     <div className='text-center lg:space-y-5 space-y-3'>
+//                         <time className='text-[16px] font-semibold text-[#2B5BFD]' datetime="2024-10-12">{date}</time>
+//                         <h1 className="md:text-[64px] leading-[70px] font-semibold dark:text-violet-600 ">{title1}</h1>
+//                         <div className='space-x-4'>
+//                             <Link href="/">Home</Link><span className='font-semibold'>/</span>
+
+//                             <Link className='font-semibold' href="/service">Blog Classic</Link><span className='font-semibold'>/</span>
+//                             <Link className='font-semibold' href="/service">Blog Classic Details</Link>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </div>
+
+
+//             <div className="md:flex justify-center gap-12   md:max-w-7xl mx-auto md:mt-12 mt-6">
+
+
+
+//                 <div className="relative lg:w-[856px] dark:bg-gray-50 dark:text-gray-800 ">
+
+//                     <div className="space-y-8">
+
+//                         <div className="w-full h-auto relative mt-5" style={{ aspectRatio: '1296 / 700' }}>
+//                             <Image
+//                                 src=''
+//                                 layout="fill"
+//                                 objectFit="cover"
+//                                 alt="Picture of the author"
+//                             />
+//                         </div>
+//                         <div className="space-y-5  md:pb-10  ">
+//                             <p>{description1}</p>
+//                             <p>{description2}</p>
+//                         </div>
+//                         <div className='flex justify-start items-center gap-2 bg-[#f2f6ff] p-5'>
+//                             <Image
+
+//                                 src='https://i.ibb.co.com/M64Rprr/double-quotes-3.png'
+//                                 width={60}
+//                                 height={64}
+//                                 alt="Picture of the author"
+//                             />
+//                             <h1 className='text-[20px] font-semibold italic'>{complexsentence.slice(0, 150)}</h1>
+//                         </div>
+//                         <div className='space-y-8'>
+//                             <h1 className='text-[28px] font-bold'>{title2}</h1>
+//                             <p>{description3}</p>
+//                             <p>{description4}</p>
+//                             <div className="w-full h-auto relative mt-5" style={{ aspectRatio: '1296 / 700' }}>
+//                                 <Image
+//                                     src='https://i.ibb.co.com/rp3Ksft/Image-8.png'
+//                                     layout="fill"
+//                                     objectFit="cover"
+//                                     alt="Picture of the author"
+//                                 />
+//                             </div>
+//                             <div className='space-y-4'>
+//                                 <h1 className='text-[28px] font-bold'>{title3}</h1>
+//                                 <p>{description5}</p>
+//                                 <p>{description5}</p>
+//                                 <div className="space-x-2 max-sm:space-y-2">
+//                                     <button className="h-10 w-24 hover:bg-[#005294] hover:text-white font-normal text-[16px] text-[#1D2939]  bg-[#f2f6ff]  px-2 py-2  rounded-none">Learning</button>
+//                                     <button className="h-10 w-[118px] hover:bg-[#005294] hover:text-white font-normal text-[16px] text-[#1D2939]  bg-[#f2f6ff]   py-2  rounded-none">Mind-Blowing</button>
+//                                     <button className="h-10 w-[108px] hover:bg-[#005294] hover:text-white font-normal text-[16px] text-[#1D2939]  bg-[#f2f6ff]   py-2  rounded-none">Technology</button>
+//                                     <button className="h-10 w-[95px] hover:bg-[#005294] hover:text-white font-normal text-[16px] text-[#1D2939]  bg-[#f2f6ff]  py-2  rounded-none">Software</button>
+//                                 </div>
+//                             </div>
+
+//                         </div>
+//                         <hr className='border border-gray-100  ' />
+//                         <div>
+//                             <Comment></Comment>
+//                         </div>
+
+//                     </div>
+//                 </div >
+
+
+
+//                 <BlogSideBar></BlogSideBar>
+//             </div>
+//         </>
+//     );
+// };
+
+// export default page;
+
+"use client";
 
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Navbar from '@/app/component/share/Navbar';
 import Comment from '@/app/component/Blog/Comment';
+import BlogSideBar from '@/app/component/Blog/BlogSideBar';
 
-const page = ({ params }) => {
+// Define the type for a blog post
+interface BlogPost {
+    _id: string;
+    date: string;
+    title1: string;
+    description1: string;
+    description2: string;
+    complexsentence: string;
+    title2: string;
+    description3: string;
+    description4: string;
+    image2: string;
+    title3: string;
+    description5: string;
+}
 
-    const blog = [
-        {
-            "_id": "1",
-            "image1": "https://i.ibb.co.com/yQwqb74/Image-18.png",
-            "date": "2024-10-12",
-            "title1": "Microsoft wants to make Windows an AI operating system",
-            "description1": "Microsoft has announced its vision to transform Windows into an AI-driven operating system, marking a significant evolution in computing. This move is expected to integrate machine learning capabilities deeply into the core of Windows, revolutionizing user interactions and making the system more responsive and intuitive. AI will help personalize user experiences, manage background processes more efficiently, and provide proactive assistance based on user behaviors. The AI integration will allow Windows to automate routine tasks, optimize performance, and even enhance security by predicting potential threats before they happen. In addition to these benefits, Microsoft is also working on improving the integration of cloud services with AI, allowing users to access powerful computing tools regardless of their device's specifications. This step will pave the way for smarter computing, where Windows learns from user interactions and adapts in real time. The company has promised to introduce features that leverage AI to simplify tasks such as file management, system troubleshooting, and multitasking, enhancing the overall efficiency for both personal and business users.",
-            "description2": "By developing AI tools directly within the Windows ecosystem, Microsoft aims to set a new industry standard for operating systems. AI-powered features will make computing more accessible and efficient, allowing users to focus on creative and critical tasks while the system handles routine processes. Moreover, the integration with Microsoft's cloud services, such as Azure, will allow for enhanced collaboration and productivity, as AI will facilitate seamless transitions between devices and platforms. This innovation promises to redefine what users can expect from an operating system in the future.",
-            "complexsentence": "By combining machine learning algorithms with cloud-based solutions, Microsoft plans to revolutionize its operating system, making it smarter and more intuitive for a wide range of users.",
-            "title2": "AI Innovations Transforming Operating Systems",
-            "description3": "The shift towards AI-powered operating systems is transforming the way users interact with their devices. With features that automate tasks and optimize performance, these systems are paving the way for more dynamic, user-centered computing experiences. AI innovations promise to enhance security, streamline workflows, and provide more personalized interactions, making operating systems smarter and more efficient.",
-            "description4": "AI-driven systems are set to redefine the user experience, with predictive capabilities that anticipate needs and automate processes. This shift towards intelligent operating systems is likely to influence the future of computing, offering more seamless and adaptive experiences for users across different devices and platforms.",
-            "image2": "https://example.com/image2.jpg",
-            "title3": "Impact on Global Technology Landscape",
-            "description5": "The integration of AI into operating systems is having a profound impact on the global tech landscape. It is influencing how users interact with their devices and how companies design products and services. AI-driven systems are becoming a standard in the industry, pushing the boundaries of innovation and offering new possibilities for both personal and professional computing.",
-            "description6": "The ongoing integration of AI into Windows signifies a broader trend within the tech industry, where adaptability and user-centered design are paramount. As users embrace these advancements, Microsoft’s commitment to innovation will be essential in shaping a more efficient and dynamic computing environment."
-        },
-        {
-            "_id": "2",
-            "image1": "https://i.ibb.co.com/yQwqb74/Image-18.png",
-            "date": "2024-10-11",
-            "title1": "Witness AI is building guardrails for generative AI models",
-            "description1": "Witness AI, a leader in ethical AI solutions, is developing crucial guardrails to ensure generative AI models are used responsibly. With the rapid rise of AI technologies, the need for safety measures has become paramount, as generative models have the potential to create content that can be misused or misinterpreted. Witness AI's goal is to mitigate risks associated with biased outputs, misinformation, and harmful content generated by AI models. Their approach focuses on embedding ethical principles into the development and deployment of these models, ensuring that AI technologies are aligned with human values and societal needs. By creating frameworks that monitor AI behaviors and outputs, Witness AI helps companies implement AI solutions that are safe, reliable, and transparent. This is especially important in fields like media, healthcare, and finance, where AI-generated content can have far-reaching consequences. Witness AI's solutions are designed to provide organizations with the tools they need to develop AI systems that are both innovative and responsible, addressing ethical challenges at every stage of the AI lifecycle.",
-            "description2": "Witness AI is also focusing on providing tools that help organizations navigate the complex ethical landscape of AI. Their guardrails for generative models include features that detect and mitigate biases, ensure transparency in AI decision-making processes, and provide accountability mechanisms for AI outputs. These tools are essential for industries that rely on AI-generated content, such as advertising, journalism, and entertainment. As AI continues to evolve, companies like Witness AI are at the forefront of ensuring that these technologies are developed and used in ways that benefit society while minimizing risks.",
-            "complexsentence": "Generative AI models are evolving rapidly, and with the rise of deep learning, it is becoming more critical to establish guardrails that prevent unethical use and ensure accountability for organizations deploying these models.",
-            "title2": "Guardrails for AI Models",
-            "description3": "The development of AI guardrails is essential for preventing misuse of generative models. These frameworks ensure that AI-generated content is ethical, accurate, and aligned with societal values, helping industries adopt AI solutions responsibly. The focus on transparency, bias detection, and accountability is critical to building trust in AI technologies.",
-            "description4": "As AI becomes more integrated into various industries, the need for ethical guardrails will continue to grow. Companies must prioritize the development of responsible AI solutions that address concerns around bias, misinformation, and accountability, ensuring that AI-generated content meets ethical standards.",
-            "image2": "https://example.com/image2.jpg",
-            "title3": "Ethics in Generative AI",
-            "description5": "The ethical considerations surrounding generative AI are becoming increasingly important as these technologies become more prevalent. Establishing standards for responsible AI development and use is crucial for maintaining public trust and ensuring that AI is used to benefit society in meaningful ways.",
-            "description6": "Through its initiatives, Witness AI strives to balance the pursuit of innovation with the necessity of ethical considerations in AI development. As generative AI continues to gain traction, their work will be pivotal in shaping industry standards and fostering public confidence in AI technologies."
-        },
-        {
-            "_id": "3",
-            "image1": "https://i.ibb.co.com/yQwqb74/Image-18.png",
-            "date": "2024-10-10",
-            "title1": "Boost your startup’s growth with a ScaleUp package at TC Disrupt 2024",
-            "description1": "TechCrunch's TC Disrupt 2024 is offering startups a unique opportunity to accelerate growth through its ScaleUp package. This exclusive program is designed to provide emerging businesses with the resources, mentorship, and networking opportunities they need to thrive in a competitive market. The ScaleUp package offers startups access to top industry leaders, investors, and potential business partners, helping them build strategic connections that can drive growth. Startups participating in the program will benefit from personalized mentorship sessions, where experts will provide guidance on business strategy, product development, and market positioning. These one-on-one sessions are tailored to address the specific challenges faced by each startup, ensuring that participants leave the program with actionable insights and a clear path to success. In addition to mentorship, the ScaleUp package includes opportunities for startups to showcase their products and services to a global audience, gaining visibility and attracting potential investors. This exposure is invaluable for startups looking to scale quickly and establish themselves as key players in their respective industries.",
-            "description2": "The ScaleUp package also provides startups with access to workshops and panel discussions, where they can learn from industry experts about the latest trends and innovations in technology and business. These sessions cover a wide range of topics, including fundraising strategies, customer acquisition, and market expansion, giving startups the tools they need to grow and succeed in a fast-paced environment. For startups looking to make a big impact at TC Disrupt 2024, the ScaleUp package is an opportunity not to be missed.",
-            "complexsentence": "By participating in this program, startups gain invaluable insights from experts in the field, as well as opportunities to pitch their ideas to potential investors and build relationships that can shape their future trajectory.",
-            "title2": "Startup Growth Opportunities at TC Disrupt",
-            "description3": "TC Disrupt's ScaleUp package is designed to help startups accelerate their growth by providing access to mentorship, networking, and business development resources. With expert guidance and opportunities for visibility, startups can gain a competitive edge and position themselves for long-term success.",
-            "description4": "Startups participating in the ScaleUp package have the opportunity to learn from industry leaders, connect with potential investors, and gain exposure to a global audience. This program is a catalyst for growth, helping startups overcome challenges and scale their businesses quickly.",
-            "image2": "https://example.com/image2.jpg",
-            "title3": "Impact of Networking on Startup Success",
-            "description5": "Networking is a critical factor in the success of startups, providing opportunities to connect with industry leaders, investors, and potential business partners. Building a strong network can help startups gain visibility, secure funding, and accelerate their growth in a competitive market.",
-            "description6": "As startups seek to grow and innovate, they face numerous challenges that require strategic planning and resource allocation. The ScaleUp package at TC Disrupt 2024 is designed to address these challenges head-on by providing startups with not only the tools and resources necessary for growth but also a robust support network. Participants will benefit from mentorship programs that connect them with seasoned entrepreneurs who can offer invaluable insights and guidance based on their own experiences. This mentorship will cover critical areas such as product development, market penetration strategies, and customer engagement techniques, enabling startups to refine their business models effectively. Furthermore, the networking opportunities available at TC Disrupt will facilitate connections with potential investors, partners, and industry experts, creating pathways for collaboration and funding. By fostering a collaborative environment where ideas can flourish, startups will be empowered to explore innovative solutions and adapt to market demands. This holistic approach to growth underscores the event's commitment to nurturing the entrepreneurial spirit and equipping startups with the comprehensive support they need to succeed in an ever-evolving business landscape."
+// Define the props type for the page component
+interface PageProps {
+    params: {
+        id: string;
+    };
+}
 
-        },
-        {
-            "_id": "4",
-            "image1": "https://i.ibb.co.com/yQwqb74/Image-18.png",
-            "date": "2024-10-09",
-            "title1": "Kickstarter now lets you pledge after a campaign closes",
-            "description1": "Kickstarter has introduced a new feature that allows users to pledge their support to campaigns even after they have officially closed. This update is a game-changer for both creators and backers, as it extends the window of opportunity for campaigns to receive funding. For creators, this means they can continue to gather support from their community long after the initial campaign period has ended. It also allows them to engage with potential backers who may have missed the original campaign deadline. For backers, this feature provides more flexibility, giving them the chance to support projects they are passionate about even if they missed the initial window. This new post-campaign pledge feature is designed to help creators maximize their fundraising efforts and bring their projects to life. It also benefits the broader Kickstarter ecosystem by allowing more projects to reach their funding goals, ultimately leading to more successful launches. By enabling pledges after campaigns close, Kickstarter is addressing a common pain point for both creators and backers, fostering a more inclusive and supportive environment for innovation and creativity.",
-            "description2": "This update reflects Kickstarter's commitment to supporting creators throughout the entire lifecycle of their projects, from initial funding to final delivery. The ability to continue receiving pledges after a campaign closes helps creators navigate the challenges of securing sufficient funding, particularly for projects that may take longer to reach their goals. It also helps backers stay engaged with projects they care about, as they can now contribute at any time during the development process. This new feature is expected to drive more successful campaigns and provide greater opportunities for creators to achieve their vision.",
-            "complexsentence": "By allowing post-campaign pledges, Kickstarter has enhanced its platform, offering more opportunities for creators to gather support and for backers to contribute to projects they believe in, even after the initial funding window has closed.",
-            "title2": "Post-Campaign Pledge Opportunities",
-            "description3": "Kickstarter's new post-campaign pledge feature provides creators with extended opportunities to secure funding, while backers gain more flexibility in supporting projects they are passionate about. This update enhances the platform by offering more inclusive opportunities for innovation and creativity.",
-            "description4": "The introduction of post-campaign pledges marks a significant evolution in crowdfunding, allowing creators to gather ongoing support from their community. This update benefits both creators and backers, fostering a more collaborative and flexible approach to funding innovative projects.",
-            "image2": "https://example.com/image2.jpg",
-            "title3": "Crowdfunding Evolution with Kickstarter",
-            "description5": "Kickstarter's new feature allowing post-campaign pledges represents an important step in the evolution of crowdfunding. By extending the opportunity to contribute, this feature helps more projects achieve their funding goals and supports the creative community in bringing innovative ideas to life.",
-            "description6": "As startups seek to grow and innovate, they face numerous challenges that require strategic planning and resource allocation. The ScaleUp package at TC Disrupt 2024 is designed to address these challenges head-on by providing startups with not only the tools and resources necessary for growth but also a robust support network."
-        },
-        {
-            "_id": "5",
-            "image1": "https://i.ibb.co.com/yQwqb74/Image-18.png",
-            "date": "2024-10-08",
-            "title1": "Autodesk acquires AI-powered VFX startup Wonder Dynamics",
-            "description1": "Autodesk, a global leader in 3D design and engineering software, has announced the acquisition of Wonder Dynamics, a startup specializing in AI-powered visual effects (VFX). This acquisition signals Autodesk's commitment to advancing its media and entertainment software offerings by integrating cutting-edge AI technologies. Wonder Dynamics has developed innovative solutions that leverage AI to automate complex VFX processes, making it easier and faster for filmmakers, game developers, and content creators to produce high-quality visual effects. By incorporating Wonder Dynamics' AI tools, Autodesk aims to streamline the VFX workflow, reducing the time and cost associated with traditional methods. This acquisition aligns with Autodesk's strategy of providing its users with powerful, efficient tools that enable creative professionals to push the boundaries of visual storytelling. With Wonder Dynamics' expertise in AI and machine learning, Autodesk plans to enhance its software suite, allowing users to generate complex VFX with minimal manual intervention. The acquisition is expected to have a significant impact on the film, television, and gaming industries, where the demand for high-quality visual effects continues to grow.",
-            "description2": "Wonder Dynamics' AI-driven VFX tools will also be integrated into Autodesk's cloud-based services, offering creators the ability to collaborate more effectively and access advanced tools from any location. This move is part of Autodesk's broader strategy to expand its cloud-based offerings, enabling users to work more flexibly and efficiently. The combination of AI and cloud technologies will allow users to create stunning visual effects without the need for expensive hardware or extensive technical expertise. As a result, more creators will be able to produce professional-grade content, democratizing access to high-end VFX tools and empowering the next generation of filmmakers and artists.",
-            "complexsentence": "With the acquisition of Wonder Dynamics, Autodesk aims to revolutionize the VFX industry by combining AI automation with cloud-based collaboration, enabling creators to produce high-quality content faster and more cost-effectively.",
-            "title2": "AI-Powered VFX Innovation",
-            "description3": "The integration of Wonder Dynamics' AI tools into Autodesk's software suite is set to transform the VFX industry by automating time-consuming processes. This will enable creators to produce high-quality visual effects with greater efficiency, making advanced VFX tools more accessible to a wider range of professionals in film, gaming, and content creation.",
-            "description4": "The acquisition of Wonder Dynamics by Autodesk is poised to disrupt the VFX industry by introducing AI-driven tools that reduce the time and cost of creating complex visual effects. These tools will be integrated into Autodesk's cloud services, enabling creators to work more efficiently and collaborate seamlessly from anywhere.",
-            "image2": "https://example.com/image2.jpg",
-            "title3": "Impact on VFX and Entertainment Industries",
-            "description5": "Autodesk's acquisition of Wonder Dynamics is expected to have a major impact on the VFX and entertainment industries. By incorporating AI and cloud-based tools, Autodesk is democratizing access to professional-grade VFX technologies, allowing creators of all levels to produce high-quality content and push the boundaries of visual storytelling.",
-            "description6": "As Autodesk continues to innovate and enhance its offerings through the acquisition of Wonder Dynamics, the VFX landscape is likely to see significant advancements. The integration of AI technologies will not only streamline production processes but also inspire a new wave of creativity among artists and developers. This development could lead to groundbreaking visual effects that captivate audiences and elevate storytelling across various media. Furthermore, as these tools become more accessible, a diverse range of creators will have the opportunity to experiment with advanced techniques, enriching the overall creative ecosystem."
-        }
+const Page: React.FC<PageProps> = ({ params }) => {
+    const [blog, setBlog] = useState<BlogPost[]>([]); // Define blog state with BlogPost type array
 
-    ]
+    useEffect(() => {
+        fetch(`http://localhost:8000/detail`)
+            .then(res => res.json())
+            .then((data: BlogPost[]) => {
+                setBlog(data);
+            });
+    }, []);
 
+    const { id } = params;
+    const blogDetails = blog.find((item) => item._id === id);
 
-    const { id } = params
-    const blogDetails = blog.find((item) => item._id === id)
-    console.log(blogDetails)
-    const { image1, date, title1, description1, description2, complexsentence, title2, description3, description4, image2, title3, description5 } = blogDetails
+    // Handle loading state or missing blog details
+    if (!blogDetails) {
+        return <p>Loading...</p>;
+    }
+
+    const { image1, date, title1, description1, description2, complexsentence, title2, description3, description4, title3, description5 } = blogDetails;
 
     return (
         <>
             <div style={{
-                backgroundImage: "url(https://i.ibb.co.com/WGV9tQw/Background-2.png)",
+                backgroundImage: "url(https://i.ibb.co/WGV9tQw/Background-2.png)",
             }}
                 className='lg:h-[580px]'>
-                <Navbar></Navbar>
+                <Navbar />
                 <div className='lg:h-[300px] lg:w-[1000px] mx-auto max-sm:p-6 lg:pt-28'>
                     <div className='text-center lg:space-y-5 space-y-3'>
-                        <time className='text-[16px] font-semibold text-[#2B5BFD]' datetime="2024-10-12">{date}</time>
+                        <time className='text-[16px] font-semibold text-[#2B5BFD]' dateTime={date}>{date}</time>
                         <h1 className="md:text-[64px] leading-[70px] font-semibold dark:text-violet-600 ">{title1}</h1>
                         <div className='space-x-4'>
                             <Link href="/">Home</Link><span className='font-semibold'>/</span>
-
                             <Link className='font-semibold' href="/service">Blog Classic</Link><span className='font-semibold'>/</span>
                             <Link className='font-semibold' href="/service">Blog Classic Details</Link>
                         </div>
@@ -119,32 +196,25 @@ const page = ({ params }) => {
                 </div>
             </div>
 
-            {/* second section */}
-            {/* first div */}
-            <div className="md:flex justify-center gap-12   md:max-w-7xl mx-auto md:mt-12 mt-6">
-
-
-
-                <div className="relative lg:w-[856px] dark:bg-gray-50 dark:text-gray-800 ">
-
+            {/* Second section */}
+            <div className="md:flex justify-center gap-12 md:max-w-7xl mx-auto md:mt-12 mt-6">
+                <div className="relative lg:w-[856px] dark:bg-gray-50 dark:text-gray-800">
                     <div className="space-y-8">
-
                         <div className="w-full h-auto relative mt-5" style={{ aspectRatio: '1296 / 700' }}>
                             <Image
-                                src={image1}
+                                src={image1} // Add correct src here
                                 layout="fill"
                                 objectFit="cover"
                                 alt="Picture of the author"
                             />
                         </div>
-                        <div className="space-y-5  md:pb-10  ">
+                        <div className="space-y-5 md:pb-10">
                             <p>{description1}</p>
                             <p>{description2}</p>
                         </div>
                         <div className='flex justify-start items-center gap-2 bg-[#f2f6ff] p-5'>
                             <Image
-
-                                src='https://i.ibb.co.com/M64Rprr/double-quotes-3.png'
+                                src='https://i.ibb.co/M64Rprr/double-quotes-3.png'
                                 width={60}
                                 height={64}
                                 alt="Picture of the author"
@@ -157,7 +227,7 @@ const page = ({ params }) => {
                             <p>{description4}</p>
                             <div className="w-full h-auto relative mt-5" style={{ aspectRatio: '1296 / 700' }}>
                                 <Image
-                                    src='https://i.ibb.co.com/rp3Ksft/Image-8.png'
+                                    src='https://i.ibb.co/rp3Ksft/Image-8.png'
                                     layout="fill"
                                     objectFit="cover"
                                     alt="Picture of the author"
@@ -168,142 +238,24 @@ const page = ({ params }) => {
                                 <p>{description5}</p>
                                 <p>{description5}</p>
                                 <div className="space-x-2 max-sm:space-y-2">
-                                    <button className="h-10 w-24 hover:bg-[#005294] hover:text-white font-normal text-[16px] text-[#1D2939]  bg-[#f2f6ff]  px-2 py-2  rounded-none">Learning</button>
-                                    <button className="h-10 w-[118px] hover:bg-[#005294] hover:text-white font-normal text-[16px] text-[#1D2939]  bg-[#f2f6ff]   py-2  rounded-none">Mind-Blowing</button>
-                                    <button className="h-10 w-[108px] hover:bg-[#005294] hover:text-white font-normal text-[16px] text-[#1D2939]  bg-[#f2f6ff]   py-2  rounded-none">Technology</button>
-                                    <button className="h-10 w-[95px] hover:bg-[#005294] hover:text-white font-normal text-[16px] text-[#1D2939]  bg-[#f2f6ff]  py-2  rounded-none">Software</button>
+                                    <button className="h-10 w-24 hover:bg-[#005294] hover:text-white font-normal text-[16px] text-[#1D2939] bg-[#f2f6ff] px-2 py-2 rounded-none">Learning</button>
+                                    <button className="h-10 w-[118px] hover:bg-[#005294] hover:text-white font-normal text-[16px] text-[#1D2939] bg-[#f2f6ff] py-2 rounded-none">Mind-Blowing</button>
+                                    <button className="h-10 w-[108px] hover:bg-[#005294] hover:text-white font-normal text-[16px] text-[#1D2939] bg-[#f2f6ff] py-2 rounded-none">Technology</button>
+                                    <button className="h-10 w-[95px] hover:bg-[#005294] hover:text-white font-normal text-[16px] text-[#1D2939] bg-[#f2f6ff] py-2 rounded-none">Software</button>
                                 </div>
                             </div>
-
                         </div>
-                        <hr className='border border-gray-100  ' />
+                        <hr className='border border-gray-100' />
                         <div>
-                            <Comment></Comment>
-                        </div>
-
-                    </div>
-                </div >
-
-
-                {/* second div */}
-                <div className="relative lg:w-[370px]">
-
-                    <div className="space-y-2 ">
-                        <h2 className='text-[20px] font-bold'>Search</h2>
-                        <form className="input input-bordered flex items-center gap-2">
-                            <input type="text" className="grow" placeholder="Search" />
-                            <button type="submit" >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 16 16"
-                                    fill="currentColor"
-                                    className="h-4 w-4 opacity-70">
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
-                                        clipRule="evenodd" />
-                                </svg>
-                            </button>
-                        </form>
-
-                    </div>
-                    <div className="mt-5  space-y-6">
-                        <div>
-
-                            <h2 className='text-[20px] font-bold'>Categories</h2>
-                        </div>
-                        <div className='space-y-3'>
-                            <div className='flex items-center gap-4'>
-                                <h5 className="text-sm font-normal text-[#60687A]">Guides </h5>
-                                <span className="text-sm font-semibold">(2)</span>
-                            </div>
-                            <div className='flex items-center gap-4'>
-                                <h5 className="text-sm font-normal text-[#60687A]">Fintech</h5>
-                                <span className="text-sm font-semibold">(1)</span>
-                            </div>
-                            <div className='flex items-center gap-4'>
-                                <h5 className="text-sm font-normal text-[#60687A]">Marketing</h5>
-                                <span className="text-sm font-semibold">(1)</span>
-                            </div>
-                            <div className='flex items-center gap-4'>
-                                <h5 className="text-sm font-normal text-[#60687A]">Software</h5>
-                                <span className="text-sm font-semibold">(3)</span>
-                            </div>
-                            <div className='flex items-center gap-4'>
-                                <h5 className="text-sm font-normal text-[#60687A]">Business</h5>
-                                <span className="text-sm font-semibold">(5)</span>
-                            </div>
-                            <div className='flex items-center gap-4'>
-                                <h5 className="text-sm font-normal text-[#60687A]">Technology</h5>
-                                <span className="text-sm font-semibold">(1)</span>
-                            </div>
+                            <Comment />
                         </div>
                     </div>
-
-                    <div className=" py-5 space-y-4 mt-4 ">
-                        <div>
-                            <h1 className="md:text-[20px] font-bold ">Recent posts</h1>
-                        </div>
-                        <div className="flex justify-start gap-2  hover:text-[#005294]">
-                            <Image
-
-                                src='https://i.ibb.co.com/rp3Ksft/Image-8.png'
-                                width={90}
-                                height={80}
-                                alt="Picture of the author"
-                            />
-                            <Link className=" lg:w-[250px] lg:h-[80px]" href=''>
-                                <div className="space-y-1 p-3">
-
-                                    <h1 className="text-[14px] font-bold">4 Social Media Funnels to Grow Your Business Audience</h1>
-                                    <p className="text-[10px] font-semibold text-[#2B5BFD]"> Marketing</p>
-
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="flex justify-start gap-2  hover:text-[#005294]">
-                            <Image
-
-                                src='https://i.ibb.co.com/g34fnPk/Image-17.png'
-                                width={90}
-                                height={80}
-                                alt="Picture of the author"
-                            />
-                            <Link className=" lg:w-[250px] lg:h-[80px]" href=''>
-                                <div className="space-y-1 p-3">
-
-                                    <h1 className="text-[14px] font-bold">4 Social Media Funnels to Grow Your Business Audience</h1>
-                                    <p className="text-[10px] font-semibold text-[#2B5BFD]"> Marketing</p>
-
-                                </div>
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="">
-                        <div className="mt-12">
-                            <h1 className="text-[20px] font-bold ">Popular Tags</h1>
-                        </div>
-                        <div className="space-y-2 pt-4  ">
-                            <div className="space-x-2 max-sm:space-y-2">
-                                <button className="h-10 w-20 hover:bg-[#005294] hover:text-white font-normal text-[16px] text-[#1D2939] bg-[#f2f6ff]  px-5 py-2  rounded-none">Havits </button>
-                                <button className="h-10 w-[98px] hover:bg-[#005294] hover:text-white font-normal text-[16px] text-[#1D2939]  bg-[#f2f6ff]  px-5 py-2  rounded-none">Interface</button>
-                                <button className="h-10 w-24 hover:bg-[#005294] hover:text-white font-normal text-[16px] text-[#1D2939]  bg-[#f2f6ff]  px-2 py-2  rounded-none">Learning</button>
-                            </div>
-                            <div className="space-x-2 max-sm:space-y-2">
-
-                                <button className="h-10 w-[118px] hover:bg-[#005294] hover:text-white font-normal text-[16px] text-[#1D2939]  bg-[#f2f6ff]   py-2  rounded-none">Mind-Blowing</button>
-                                <button className="h-10 w-[108px] hover:bg-[#005294] hover:text-white font-normal text-[16px] text-[#1D2939]  bg-[#f2f6ff]   py-2  rounded-none">Technology</button>
-                                <button className="h-10 w-[95px] hover:bg-[#005294] hover:text-white font-normal text-[16px] text-[#1D2939]  bg-[#f2f6ff]  py-2  rounded-none">Software</button>
-                            </div>
-
-                        </div>
-                    </div>
-
-
                 </div>
+                {/* Sidebar */}
+                <BlogSideBar />
             </div>
         </>
     );
 };
 
-export default page;
+export default Page;

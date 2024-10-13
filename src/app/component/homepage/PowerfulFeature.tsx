@@ -107,7 +107,10 @@ const PowerfulFeature = () => {
                         alt="Picture of the author"
                     />
                 </div>
+
+                <hr className='border border-red-500' />
             </div>
+
         </div>
     );
 };
