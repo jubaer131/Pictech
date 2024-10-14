@@ -31,7 +31,7 @@ const Banner = () => {
             </div>
 
             <div className='lg:max-w-[1600px] w-full mx-auto mt-20 '>
-                <h2 className='text-center'>Trusted by agencies managing 100+ client projects daily</h2>
+                <h2 className='text-center text-[18px] font-normal'>Trusted by agencies managing <span className='font-bold'>100+</span> client projects daily</h2>
                 <div className='lg:flex  items-center justify-between max-sm:grid grid-cols-2 gap-4 max-sm:p-12 pt-6 lg:pb-28 '>
 
                     <Image

@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import Question11 from './Question11';
 
 
@@ -72,7 +71,7 @@ const SaaspicQusetion = () => {
                     </div>
 
                     <div
-                        className="lg:w-[598px] lg:h-[540px] py-20 overflow-y-auto border-l border-gray-400 lg:order-1 lg:self-start flex items-center justify-center"
+                        className="lg:w-[598px] lg:h-[540px] space-y-20 overflow-y-auto border-l border-gray-400 lg:order-1 lg:self-start "
                         style={{
                             direction: 'rtl',
                             scrollbarWidth: 'thin',

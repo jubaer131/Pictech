@@ -7,8 +7,8 @@ import { PiCheck } from 'react-icons/pi';
 
 const PowerFullpeatureHome2 = () => {
     return (
-        <div className='lg:w-[1337px] mx-auto'>
-            <div className='lg:flex justify-center items-center gap-28 lg:mt-20 mt-8 max-sm:space-y-4'>
+        <div className='lg:w-[1337px] mx-auto py-20'>
+            <div className='lg:flex justify-center items-center gap-12   max-sm:space-y-4'>
                 <div className='lg:w-1/2 max-sm:p-4'>
                     <Image
 
@@ -49,7 +49,7 @@ const PowerFullpeatureHome2 = () => {
                 </div>
 
             </div>
-            <div className='flex flex-col-reverse lg:flex-row justify-center items-center lg:gap-28 gap-6 lg:mt-20 mt-8'>
+            <div className='flex flex-col-reverse lg:flex-row justify-center items-center lg:gap-12 gap-6 lg:mt-20 mt-8'>
                 <div className='lg:w-[576px] space-y-8 max-sm:p-4 '>
 
                     <h1 className='text-6xl font-semibold line- text-white'>Keep the power of  chat  in your pocket</h1>

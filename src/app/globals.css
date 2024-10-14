@@ -25,3 +25,26 @@ body {
     text-wrap: balance;
   }
 }
+
+/* test */
+
+/* Custom scrollbar styling for WebKit browsers */
+::-webkit-scrollbar {
+  width: 50px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e90808;
+  /* Track color from Tailwind */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  /* Thumb color from Tailwind */
+  border-radius: 10px;
+}
+
+/* Hover state */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #7a2323;
+}
