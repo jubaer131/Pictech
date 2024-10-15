@@ -52,7 +52,7 @@ const SaaspicQusetion = () => {
     return (
 
         <>
-            <div className='lg:w-[1296px] ml-64'>
+            <div className='lg:w-[1296px] lg:ml-64'>
                 <h1 className='text-center lg:text-4xl font-bold mb-2 max-sm:px-4 text-white'>
                     Saaspic managed remote <br />
                     talent experience
@@ -61,7 +61,7 @@ const SaaspicQusetion = () => {
 
                 <div className='flex lg:flex-row flex-col-reverse justify-between items-center  gap-2 lg:mt-20'>
 
-                    <div className="w-[600px] h-auto relative" style={{ aspectRatio: '600/ 560' }}>
+                    <div className="lg:w-[600px] h-auto relative" style={{ aspectRatio: '600/ 560' }}>
                         <Image
                             src='https://i.ibb.co.com/MR3dh1t/Graphics.png'
                             layout="fill"
@@ -71,7 +71,7 @@ const SaaspicQusetion = () => {
                     </div>
 
                     <div
-                        className="lg:w-[598px] lg:h-[540px] space-y-20 overflow-y-auto border-l border-gray-400 lg:order-1 lg:self-start "
+                        className="lg:w-[598px] lg:h-[540px] space-y-20 overflow-y-auto lg:border-l border-gray-400 lg:order-1 lg:self-start "
                         style={{
                             direction: 'rtl',
                             scrollbarWidth: 'thin',

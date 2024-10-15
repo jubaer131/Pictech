@@ -168,14 +168,16 @@ const Navbar = () => {
                             </li>
                         </ul>
                     </div>
-                    <a href="#" className="text-xl">
+                    <Link href="#" className="text-xl flex gap-3 items-center">
                         <Image
-                            src="https://i.ibb.co.com/8xxjLg4/Logo-1.png"
-                            width={140}
+                            src="https://i.ibb.co.com/qCcmTcJ/Vector-3.png"
+                            width={34}
                             height={34}
                             alt="Logo"
+                            className="cursor-pointer"
                         />
-                    </a>
+                        <h1 className="text-black font-semibold lg:text-[28px]">Pictech</h1>
+                    </Link>
                 </div>
 
                 <div className="navbar-center pr-12 hidden lg:flex">

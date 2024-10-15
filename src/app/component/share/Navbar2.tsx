@@ -25,13 +25,13 @@ const NavLink = ({
 
 const Navbar2 = () => {
     return (
-        <div className="w-full lg:w-[67%] ml-[340px]">
+        <div className="w-full lg:w-[67%] lg:ml-[340px]">
             <div className="navbar py-2 px-4 lg:pt-5  shadow-md">
                 {/* Navbar Start */}
                 <div className="navbar-start">
                     <div className="dropdown">
                         {/* Mobile hamburger menu */}
-                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                        <div tabIndex={0} role="button" className="btn bg-white lg:hidden">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-6 w-6"

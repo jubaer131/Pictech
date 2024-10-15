@@ -4,7 +4,7 @@ import { PiLineVerticalThin } from "react-icons/pi";
 
 const Stat = () => {
     return (
-        <div className='lg:w-[1444.5px] h-[334px] ml-[186px] flex items-center justify-between py-20 '>
+        <div className='lg:w-[1444.5px] lg:h-[334px] lg:ml-[186px] flex items-center justify-between py-20 '>
 
             <div className='flex justify-between items-center  py-8 '>
                 <div className="space-y-2 lg:w-[265px]">

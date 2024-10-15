@@ -54,7 +54,7 @@ const AboutSectionSlider: React.FC = () => {
     const [sliderRef] = useKeenSlider({
         loop: true,
         mode: "free",
-        slides: { origin: "center", perView: 4.20, spacing: 0 },
+        slides: { origin: "center", perView: 4.36, spacing: 0 },
         range: {
             min: -5,
             max: 5,
@@ -63,9 +63,9 @@ const AboutSectionSlider: React.FC = () => {
 
     return (
         <>
-            <div className="text-center lg:py-20 ">
-                <h1 className="text-4xl font-bold">Don't just take our word for it</h1>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum <br /> industry's standard dummy text ever since the 1500s</p>
+            <div className="lg:text-center lg:py-20 py-10 space-y-4">
+                <h1 className="text-5xl font-semibold max-sm:text-center">Don't just take our word for it</h1>
+                <p className="text-[18px] font-normal max-sm:p-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum <br /> industry's standard dummy text ever since the 1500s</p>
             </div>
             <div ref={sliderRef} className="keen-slider">
                 {reviews.map((review, index) => (

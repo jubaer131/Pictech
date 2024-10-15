@@ -81,7 +81,7 @@ const Feedback = () => {
     };
 
     return (
-        <section className="ml-56 ">
+        <section className="lg:ml-56 ">
             <div className="px-4  sm:px-6 lg:px-8">
                 <div className='space-y-3 text-center pr-[20rem] mb-5 p-4'>
                     <h1 className='text-6xl font-semibold text-white'> Client’s Feedback </h1>

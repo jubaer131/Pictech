@@ -5,7 +5,7 @@ import Image from 'next/image';
 const ConnectTools = () => {
     return (
         <>
-            <div className='lg:w-[1290px] ml-[275px] py-24'>
+            <div className='lg:w-[1290px] lg:ml-[275px] py-24'>
                 <h1 className='text-center text-6xl font-semibold pb-20 pt-5 text-white'>Easily connect to tools <br />
                     you already use</h1>
                 <div className='w-full grid lg:grid-cols-3 grid-cols-1 gap-6'>

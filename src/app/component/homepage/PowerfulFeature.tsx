@@ -5,10 +5,10 @@ import { PiCheck } from "react-icons/pi";
 
 const PowerfulFeature = () => {
     return (
-        <div className='max-w-[1305px] mx-auto mt-28'>
-            <h1 className='text-center lg:text-4xl font-bold mb-2 max-sm:px-4'>Powerful Features That Set Us <br /> Apart and Ahead</h1>
+        <div className='max-w-[1305px] mx-auto lg:mt-32'>
+            <h1 className='text-center lg:text-5xl font-semibold mb-4 max-sm:px-4'>Powerful Features That Set Us <br /> Apart and Ahead</h1>
             <p className='text-center max-sm:px-4'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum <br /> has been the industry's standard dummy text.</p>
-            <div className='flex flex-col-reverse lg:flex-row justify-center items-center max-sm:space-y-7 lg:gap-28 gap-12 lg:mt-20'>
+            <div className='flex flex-col-reverse lg:flex-row justify-center items-center max-sm:space-y-7 lg:gap-28 gap-12 lg:mt-28'>
                 <div className='lg:w-1/2 space-y-4 max-sm:px-5'>
                     <h5 className='text-[#2563EB]  text-[16px] font-semibold'>Business Analytics</h5>
                     <h1 className='text-[40px] leading-[46px] font-semibold line-'>Accelerate your workflow and minimise your time</h1>
@@ -29,7 +29,7 @@ const PowerfulFeature = () => {
 
 
                     </ul>
-                    <Link href="#"><button className='btn bg-[#2a5bfc] mt-5 text-white'>Try pree version</button></Link>
+                    <Link href="#"><button className='btn bg-[#2a5bfc] mt-5 text-white hover:bg-white hover:text-[#2a5bfc]'>Try pree version</button></Link>
                 </div>
                 <div className='lg:w-1/2 max-sm:px-5'>
                     <Image
@@ -53,7 +53,7 @@ const PowerfulFeature = () => {
                 </div>
                 <div className='lg:w-1/2 space-y-4 max-sm:p-4'>
                     <h5 className=' text-[#2563EB]  text-[16px] font-semibold'>Business Analytics</h5>
-                    <h1 className='text-[40px] leading-[46px] font-semibold line-'>Accelerate your workflow and minimise your time</h1>
+                    <h1 className='text-[40px] leading-[46px] font-semibold line-'>Transform User Data into Actionable Insights</h1>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printe</p>
                     <ul className='space-y-3'>
                         <li className=" flex items-center gap-3">
@@ -71,7 +71,7 @@ const PowerfulFeature = () => {
 
 
                     </ul>
-                    <Link href="#"><button className='btn bg-[#2a5bfc] mt-5 text-white'>Try pree version</button></Link>
+                    <Link href="#"><button className='btn bg-[#2a5bfc] mt-5 text-white hover:bg-white hover:text-[#2a5bfc]'>Try pree version</button></Link>
                 </div>
 
             </div>
@@ -96,7 +96,7 @@ const PowerfulFeature = () => {
 
 
                     </ul>
-                    <Link href="#"><button className='btn bg-[#2a5bfc] mt-5 text-white'>Try pree version</button></Link>
+                    <Link href="#"><button className='btn bg-[#2a5bfc] mt-5 text-white hover:bg-white hover:text-[#2a5bfc]'>Try pree version</button></Link>
                 </div>
                 <div className='lg:w-1/2 max-sm:p-4'>
                     <Image
@@ -108,7 +108,6 @@ const PowerfulFeature = () => {
                     />
                 </div>
 
-                <hr className='border border-red-500' />
             </div>
 
         </div>
