@@ -11,7 +11,7 @@ import { IoIosStar } from "react-icons/io";
 
 const recommendations = [
     {
-        logo: "https://i.ibb.co/rckpwZr/Logo-2.png",
+        logo: "https://i.ibb.co.com/FXYKzDv/Image-20.png",
         rating: 5,
         text: "“Amazing service. Excellent customer service and the work on behalf my work colleague Kirti S. from Wing is top notch. I’ve enjoyed the help and the genuine personality and willingness to learn. Also a big call out to Maryann U. my customer success manager.”",
         authorImage: "https://i.ibb.co/3FhMxn7/Image-4.png",
@@ -19,7 +19,7 @@ const recommendations = [
         authorTitle: "CEO & Founding Partner",
     },
     {
-        logo: "https://i.ibb.co/0tgm4JS/Logo-4.png",
+        logo: "https://i.ibb.co.com/hLvtWY8/Image-21.png",
         rating: 5,
         text: "“Amazing service. Excellent customer service and the work on behalf my work colleague Kirti S. from Wing is top notch. I’ve enjoyed the help and the genuine personality and willingness to learn. Also a big call out to Maryann U. my customer success manager.”",
         authorImage: "https://i.ibb.co/fMV3PMh/Image-5.png",
@@ -27,7 +27,7 @@ const recommendations = [
         authorTitle: "CEO & Founding Partner",
     },
     {
-        logo: "https://i.ibb.co/VgQgYNx/Logo-5.png",
+        logo: "https://i.ibb.co.com/BgwZ1gT/Image-22.png",
         rating: 5,
         text: "“Amazing service. Excellent customer service and the work on behalf my work colleague Kirti S. from Wing is top notch. I’ve enjoyed the help and the genuine personality and willingness to learn. Also a big call out to Maryann U. my customer success manager.”",
         authorImage: "https://i.ibb.co/RNGJhv3/Image-6.png",
@@ -83,8 +83,8 @@ const Feedback = () => {
     return (
         <section className="lg:ml-56 ">
             <div className="px-4  sm:px-6 lg:px-8">
-                <div className='space-y-3 text-center pr-[20rem] mb-5 p-4'>
-                    <h1 className='text-6xl font-semibold text-white'> Client’s Feedback </h1>
+                <div className='space-y-3 text-center lg:pr-[20rem] mb-5 p-4'>
+                    <h1 className='lg:text-6xl max-sm:text-3xl font-semibold text-white'> Client’s Feedback </h1>
                     <p className='text-[20px] font-normal  text-white'> 200+ Trusted Clients</p>
                 </div>
 
@@ -94,19 +94,19 @@ const Feedback = () => {
                     <div ref={sliderRef} className="keen-slider ">
                         {recommendations.map((item, index) => (
                             <div key={index} className="keen-slider__slide ">
-                                <blockquote className="flex w-[560px] h-[452px] flex-col gap-y-6  sm:p-6 lg:p-14 bg-white   rounded-[7px]">
+                                <blockquote className="flex lg:w-[560px] lg:h-[452px] flex-col lg:gap-y-6   lg:p-14 bg-white   rounded-[7px]">
 
-                                    <footer className="mt-2 text-sm flex gap-3">
+                                    <footer className="mt-2 text-sm flex gap-3 max-sm:pt-5">
 
                                         <span className="text-[#fb6511] text-[24px]"> <IoIosStar /></span>
                                         <span className="text-[#fb6511] text-[24px]"> <IoIosStar /></span>
                                         <span className="text-[#fb6511] text-[24px]"> <IoIosStar /></span>
-                                        <span className="text-[#fb6511] text-[24px]"> <IoIosStar /></span>
-                                        <span className="text-[#fb6511] text-[24px]"> <IoIosStar /></span>
+                                        <span className="text-[#fb6511] text-[24px] "> <IoIosStar /></span>
+                                        <span className="text-[#fb6511] text-[24px] max-sm: hidden"> <IoIosStar /></span>
                                     </footer>
                                     <div className="space-y-6">
 
-                                        <p className="mt-2 text-[20px] font-medium leading-relaxed">{item.text}</p>
+                                        <p className="mt-2 lg:text-[20px] font-medium leading-relaxed max-sm:p-2">{item.text}</p>
 
 
                                         <div className="flex gap-3">
@@ -121,8 +121,8 @@ const Feedback = () => {
 
 
                                             <div>
-                                                <p className="text-2xl font-bold">{item.authorName}</p>
-                                                <p className="font-semibold">{item.authorTitle}</p>
+                                                <p className="lg:text-2xl font-bold">{item.authorName}</p>
+                                                <p className="lg:font-semibold">{item.authorTitle}</p>
                                             </div>
                                         </div>
 

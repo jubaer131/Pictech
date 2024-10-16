@@ -5,14 +5,14 @@ const Home2Banner = () => {
     return (
         <>
 
-            <div className='lg:w-[62%] mx-auto lg:h-[900px]    flex justify-start items-center'>
+            <div className='lg:w-[62%] mx-auto lg:h-[900px]    flex justify-start items-center max-sm:pt-16 max-sm:p-8'>
 
                 <div className="lg:w-[772px] lg:h-[551px] lg:text-start  text-center ">
 
-                    <h1 className="mb-5 lg:text-[70px] lg:leading-[70px] text-2xl font-semibold text-white">Engage your
-                        customers with <br />
+                    <h1 className="mb-5 lg:text-[70px] lg:leading-[70px] text-3xl font-semibold text-white">Engage your
+                        customers with <br className='max-sm:hidden' />
                         real-time chat</h1>
-                    <p className="mb-5  text-white text-[18px] font-normal lg:w-[616px] ">
+                    <p className="mb-5  text-white text-[18px] font-normal max-sm:text-start lg:w-[616px] ">
                         Pictech is a complete customer service platform that connects with your
                         website visitors in real-time to convert new leads, close more deals, and
                         provide better support to your customers.

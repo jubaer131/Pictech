@@ -1,13 +1,12 @@
 "use client"
 
-import Link from 'next/link';
 import React from 'react';
 import Image from 'next/image';
 import { PiCheck } from 'react-icons/pi';
 
 const PowerFullpeatureHome2 = () => {
     return (
-        <div className='lg:w-[1337px] mx-auto py-20'>
+        <div className='lg:w-[1337px] mx-auto lg:py-20 max-sm:p-5'>
             <div className='lg:flex justify-center items-center gap-12   max-sm:space-y-4'>
                 <div className='lg:w-1/2 max-sm:p-4'>
                     <Image
@@ -19,7 +18,7 @@ const PowerFullpeatureHome2 = () => {
                     />
                 </div>
                 <div className='lg:w-[620px] space-y-4 max-sm:p-4'>
-                    <h1 className='text-6xl  font-semibold text-white'>Messaging  with a
+                    <h1 className='lg:text-6xl text-3xl font-semibold text-white'>Messaging  with a
                         simple platform</h1>
 
                     <ul className='space-y-12 pt-8'>
@@ -52,7 +51,7 @@ const PowerFullpeatureHome2 = () => {
             <div className='flex flex-col-reverse lg:flex-row justify-center items-center lg:gap-12 gap-6 lg:mt-20 mt-8'>
                 <div className='lg:w-[576px] space-y-8 max-sm:p-4 '>
 
-                    <h1 className='text-6xl font-semibold line- text-white'>Keep the power of  chat  in your pocket</h1>
+                    <h1 className='lg:text-6xl  text-3xl font-semibold line- text-white'>Keep the power of  chat  in your pocket</h1>
                     <p className='text-white text-[18px] font-normal'>All Wing clients receive complimentary access to the Wing <br /> Task Workspace App – a specialized app built to help you <br /> your assistant, manage tasks/projects,  </p>
                     <ul className='space-y-6'>
                         <li className=" flex items-center gap-3">

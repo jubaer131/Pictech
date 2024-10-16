@@ -4,9 +4,9 @@ import Image from 'next/image';
 const Home2bannerImage = () => {
     return (
         <>
-            <div className='lg:max-w-[1290px] w-full ml-[400px] pt-20'>
-                <h2 className='text-center text-white text-[20px] font-normal'>Companies of all sizes trust Resend to deliver <br /> their most important emails.</h2>
-                <div className='lg:flex  items-center justify-between max-sm:grid grid-cols-2 gap-4 max-sm:p-12 pt-6 lg:pb-10 '>
+            <div className='lg:max-w-[1290px] w-full lg:ml-[400px] lg:pt-20 max-sm:p-8'>
+                <h2 className='text-center text-white text-[20px] font-normal max-sm:text-start'>Companies of all sizes trust Resend to deliver <br className='max-sm:hidden' /> their most important emails.</h2>
+                <div className='lg:flex  items-center justify-between max-sm:grid grid-cols-2 gap-4 max-sm:p-12 pt-12 lg:pb-10 '>
 
                     <Image
 

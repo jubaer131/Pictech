@@ -50,7 +50,7 @@ const AccordionComponent: FC = () => {
 
             <div className='text-center lg:py-12 space-y-4'>
                 <h1 className='text-5xl font-semibold'>Frequently Asked Questions</h1>
-                <p className='text-[18px] font-normal'>Find questions and answers related to the design system, <br /> purchase, updates, and support.</p>
+                <p className='text-[18px] font-normal max-sm:p-5 '>Find questions and answers related to the design system, <br className='max-sm:hidden' /> purchase, updates, and support.</p>
             </div>
 
             {accordionData.map((item, index) => (

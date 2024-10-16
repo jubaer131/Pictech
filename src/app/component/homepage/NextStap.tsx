@@ -3,7 +3,7 @@ import React from 'react';
 const NextStap = () => {
     return (
 
-        <div className='lg:pb-20 pb-5'>
+        <div className='lg:pb-20 pb-1 p-2'>
             <div
                 className="hero max-w-7xl mx-auto h-[544px] rounded-3xl"
                 style={{

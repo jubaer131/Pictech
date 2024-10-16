@@ -29,9 +29,9 @@ const Navbar2 = () => {
             <div className="navbar py-2 px-4 lg:pt-5  shadow-md">
                 {/* Navbar Start */}
                 <div className="navbar-start">
-                    <div className="dropdown">
+                    <div className="dropdown pr-2">
                         {/* Mobile hamburger menu */}
-                        <div tabIndex={0} role="button" className="btn bg-white lg:hidden">
+                        <div tabIndex={0} role="button" className="btn  bg-white lg:hidden">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-6 w-6"
@@ -51,33 +51,33 @@ const Navbar2 = () => {
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                             <li>
-                                <NavLink href="/" className="hover:text-[#2b5bfd]" activeClassName="text-[#2b5bfd]" nonActiveClassName="text-white">
+                                <NavLink href="/" className="hover:text-[#2b5bfd]" activeClassName="text-[#2b5bfd]" nonActiveClassName="text-black">
                                     Home 1
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink href="/home2" className="hover:text-[#2b5bfd]" activeClassName="text-[#2b5bfd]" nonActiveClassName="text-white">
+                                <NavLink href="/home2" className="hover:text-[#2b5bfd]" activeClassName="text-[#2b5bfd]" nonActiveClassName="text-black">
                                     Home 2
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink href="/aboutus" className="hover:text-[#2b5bfd]" activeClassName="text-[#2b5bfd]" nonActiveClassName="text-white">
+                                <NavLink href="/aboutus" className="hover:text-[#2b5bfd]" activeClassName="text-[#2b5bfd]" nonActiveClassName="text-black">
                                     About Us
                                 </NavLink>
                             </li>
 
                             <li>
-                                <NavLink href="/service" className="hover:text-[#2b5bfd]" activeClassName="text-[#2b5bfd]" nonActiveClassName="text-white">
+                                <NavLink href="/service" className="hover:text-[#2b5bfd]" activeClassName="text-[#2b5bfd]" nonActiveClassName="text-black">
                                     Services
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink href="/blog" className="hover:text-[#2b5bfd]" activeClassName="text-[#2b5bfd]" nonActiveClassName="text-white">
+                                <NavLink href="/blog" className="hover:text-[#2b5bfd]" activeClassName="text-[#2b5bfd]" nonActiveClassName="text-black">
                                     Blog
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink href="/contractus" className="hover:text-[#2b5bfd]" activeClassName="text-[#2b5bfd]" nonActiveClassName="text-white">
+                                <NavLink href="/contractus" className="hover:text-[#2b5bfd]" activeClassName="text-[#2b5bfd]" nonActiveClassName="text-black">
                                     Contact Us
                                 </NavLink>
                             </li>
@@ -145,10 +145,10 @@ const Navbar2 = () => {
                 </div>
                 {/* Navbar End */}
                 <div className="navbar-end space-x-3">
-                    <NavLink href="/login" activeClassName="text-[#2b5bfd]" nonActiveClassName="text-black" className="btn hover:text-[#2b5bfd] hover:bg-white border">
+                    <NavLink href="/login" activeClassName="text-[#2b5bfd]" nonActiveClassName="text-black" className="btn hover:text-[#2b5bfd] hover:bg-white ">
                         Login
                     </NavLink>
-                    <NavLink href="/register" activeClassName="text-[#2b5bfd]" nonActiveClassName="text-white" className="btn bg-[#2b5bfd] hover:text-[#2b5bfd] hover:bg-white border">
+                    <NavLink href="/register" activeClassName="text-[#2b5bfd]" nonActiveClassName="text-white" className="btn bg-[#2b5bfd] hover:text-[#2b5bfd] hover:bg-white border-0">
                         <span className="max-sm:hidden ">Create Free</span> account
                     </NavLink>
                 </div>

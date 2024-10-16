@@ -51,14 +51,14 @@ const SeerviceBussiness = () => {
 
 
     return (
-        <div className='lg:w-[1260px] mx-auto lg:py-28 py-16'>
+        <div className='lg:w-[1260px] mx-auto lg:py-28 pb-4 pt-16'>
             <h1 className='text-center mb-4 text-4xl font-bold'>Built for service businesses of all <br /> types and sizes</h1>
-            <p className='text-[18px] lg:text-center font-normal max-sm:p-5 mb-10'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum <br /> industry's standard dummy text ever since the 1500s</p>
+            <p className='text-[18px] text-center font-normal max-sm:p-5 lg:mb-10'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum <br className='max-sm:hidden' /> industry's standard dummy text ever since the 1500s</p>
 
             <Tabs>
 
 
-                <TabList className="lg:flex items-center  text-gray-800 max-sm:grid grid-cols-1   max-sm:p-12">
+                <TabList className="lg:flex items-center  text-gray-800 max-sm:grid grid-cols-1   max-sm:px-10">
                     {services.map((item, index) => (
                         <Tab
                             key={index}
@@ -79,7 +79,7 @@ const SeerviceBussiness = () => {
                 </TabList>
 
                 <TabPanel>
-                    <div className="card lg:card-side bg-base-100 shadow-md lg:p-12 p-8 mt-10 ">
+                    <div className="card lg:card-side bg-base-100 shadow-md lg:p-12  lg:mt-10 ">
                         <div>
                             <Image
 
@@ -113,7 +113,7 @@ const SeerviceBussiness = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className="card lg:card-side bg-base-100 shadow-md p-12 mt-10">
+                    <div className="card lg:card-side bg-base-100 shadow-md lg:p-12 mt-10">
                         <div>
                             <Image
 
@@ -147,7 +147,7 @@ const SeerviceBussiness = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className="card lg:card-side bg-base-100 shadow-md p-12 mt-10">
+                    <div className="card lg:card-side bg-base-100 shadow-md lg:p-12 mt-10">
                         <div>
                             <Image
 
@@ -181,7 +181,7 @@ const SeerviceBussiness = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className="card lg:card-side bg-base-100 shadow-md p-12 mt-10">
+                    <div className="card lg:card-side bg-base-100 shadow-md lg:p-12 mt-10">
                         <div>
                             <Image
 
@@ -215,7 +215,7 @@ const SeerviceBussiness = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className="card lg:card-side bg-base-100 shadow-md p-12 mt-10">
+                    <div className="card lg:card-side bg-base-100 shadow-md lg:p-12 mt-10">
                         <div>
                             <Image
 

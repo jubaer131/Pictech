@@ -25,3 +25,12 @@ body {
     text-wrap: balance;
   }
 }
+
+
+
+.scroll {
+  width: 1px;
+  height: 15px;
+  overflow-y: scroll;
+  scrollbar-color: white rgb(18, 18, 23);
+}

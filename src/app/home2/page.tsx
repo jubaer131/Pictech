@@ -16,6 +16,8 @@ const page = () => {
 
                 <div style={{
                     backgroundImage: "url(https://i.ibb.co.com/k5D9Hwq/09.png)",
+                    backgroundSize: 'cover',  // Cover the entire area
+                    backgroundRepeat: 'no-repeat', // No repeat
                 }} >
                     <Navbar2></Navbar2>
                     <Home2Banner></Home2Banner>
@@ -25,14 +27,18 @@ const page = () => {
             </div>
             <div className='py-20' style={{
                 backgroundImage: "url(https://i.ibb.co.com/qpZF1sV/BG-2.png)",
+                backgroundSize: 'cover',  // Cover the entire area
+                backgroundRepeat: 'no-repeat', // No repeat
             }} >
                 <Feedback></Feedback>
             </div>
-            <div className='bg-[#121217] py-20'>
+            <div className='lg:bg-[#121217] lg:py-20'>
                 <SaaspicQusetion></SaaspicQusetion>
             </div>
             <div style={{
-                backgroundImage: "url(https://i.ibb.co.com/7SggSn6/BG-3.png)",
+                backgroundImage: "url('https://i.ibb.co/7SggSn6/BG-3.png')", // Corrected URL syntax
+                backgroundSize: 'cover',  // Cover the entire area
+                backgroundRepeat: 'no-repeat', // No repeat
             }}>
                 <Stat></Stat>
             </div>

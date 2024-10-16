@@ -4,12 +4,13 @@ import { CiTwitter } from "react-icons/ci";
 import { FaFacebook } from "react-icons/fa";
 import { CiInstagram } from "react-icons/ci";
 import { IoLogoGithub } from "react-icons/io5";
+import Link from 'next/link';
 
 const Footer = () => {
     return (
         <div style={{
             backgroundImage: "url(https://i.ibb.co.com/pnwGwPd/BG-1.png)",
-        }} className='w-full mx-auto '>
+        }} className='w-full mx-auto max-sm:p-8'>
             <footer className="footer justify-between  lg:h-[400px] text-base-content lg:px-80 lg:pt-32">
                 <nav>
                     <a href='#' className=" text-xl "> <Image
@@ -20,10 +21,31 @@ const Footer = () => {
                     /></a>
                     <p className='text-white pt-3'>Amet minim mollit non deserunt ullamco est <br /> sit aliqua dolor do amet sint. Velit officia <br /> consequat duis enim velit mollit.</p>
                     <div className='flex items-center gap-5 pt-8'>
-                        <a className="link link-hover text-white"><CiTwitter /></a>
-                        <a className="link link-hover text-white"><FaFacebook /></a>
-                        <a className="link link-hover text-white"><CiInstagram /></a>
-                        <a className="link link-hover text-white"><IoLogoGithub /></a>
+                        <Link href="#"><Image
+                            src="https://i.ibb.co.com/VYDSMmK/1.png"
+                            width={28}
+                            height={28}
+                            alt="Picture of the author"
+                        /></Link>
+                        <Link href="#"><Image
+                            src="https://i.ibb.co.com/dcMx7mT/2.png"
+                            width={28}
+                            height={28}
+                            alt="Picture of the author"
+                        /></Link>
+                        <Link href="#"><Image
+                            src="https://i.ibb.co.com/g6kmJwB/3.png"
+                            width={28}
+                            height={28}
+                            alt="Picture of the author"
+                        /></Link>
+                        <Link href="#"><Image
+                            src="https://i.ibb.co.com/xXtBk0P/4.png"
+                            width={28}
+                            height={28}
+                            alt="Picture of the author"
+                        /></Link>
+
                     </div>
 
                 </nav>
@@ -40,7 +62,7 @@ const Footer = () => {
                     <a className="link link-hover text-white">Privacy policy</a>
                     <a className="link link-hover text-white">Cookie policy</a>
                 </nav>
-                <form>
+                <form className='max-sm:py-8'>
                     <h6 className="footer-title text-white">Newsletter</h6>
                     <fieldset className="form-control w-80">
                         <label className="label">

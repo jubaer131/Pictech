@@ -13,7 +13,7 @@ const Banner = () => {
 
                     <h1 className="mb-5 lg:text-[70px] lg:leading-[70px] text-2xl font-semibold">Manage Clients <br /> & Teams in Your Digital Business</h1>
                     <p className="mb-5">
-                        A powerful, agile, all-in-one recruiting tool designed with <br /> productivity and loaded with features more successfully
+                        A powerful, agile, all-in-one recruiting tool designed with <br className='max-sm:hidden' /> productivity and loaded with features more successfully
                     </p>
                     <button className="btn bg-[#2b5bfd] text-white">Get Started for Free</button>
 
@@ -30,7 +30,7 @@ const Banner = () => {
                 </div>
             </div>
 
-            <div className='lg:max-w-[1600px] w-full mx-auto mt-20 '>
+            <div className='lg:max-w-[1600px] w-full mx-auto lg:mt-20 mt-10'>
                 <h2 className='text-center text-[18px] font-normal'>Trusted by agencies managing <span className='font-bold'>100+</span> client projects daily</h2>
                 <div className='lg:flex  items-center justify-between max-sm:grid grid-cols-2 gap-4 max-sm:p-12 pt-6 lg:pb-28 '>
 
