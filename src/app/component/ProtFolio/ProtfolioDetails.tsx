@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const ProtfolioDetails = ({ item }) => {
     return (
-        <Link href={`/protfolio/${item._id}`}>
+        <Link href={`/protfolio/${item._id}`} className='pb-6'>
             <div className=" dark:bg-gray-50 dark:text-gray-800">
                 <Image
 

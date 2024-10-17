@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import ProtfolioDetails from './ProtfolioDetails';
+import { ClockLoader } from 'react-spinners';
 
 
 
@@ -37,11 +38,14 @@ const MyTab = () => {
 
 
 
+    if (!Portfolio) return <div className="w-full h-[660px] flex items-center justify-center"><ClockLoader color="orange" size={70} />  </div>
+
+
 
     return (
         <div >
             <Tabs>
-                <TabList className="flex items-center justify-between lg:w-[466px] mx-auto my-12">
+                <TabList className="lg:flex items-center justify-between lg:w-[466px] mx-auto max-sm:grid grid-cols-3 gap-2 max-sm:p-5 my-12">
                     {["All", "Bussiness", "Corporate", "Creative", "Startup"].map((tabName, index) => (
                         <Tab
                             key={index}
@@ -58,7 +62,7 @@ const MyTab = () => {
                 </TabList>
 
                 <TabPanel >
-                    <div className='grid lg:grid-cols-2 gap-5'>
+                    <div className='grid lg:grid-cols-2 gap-6 max-sm:p-5 '>
                         {
                             Portfolio.map((item) => (
                                 <ProtfolioDetails key={item._id} item={item}></ProtfolioDetails>
@@ -67,7 +71,7 @@ const MyTab = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className='grid lg:grid-cols-2 gap-5'>
+                    <div className='grid lg:grid-cols-2 gap-6'>
 
                         {
                             item1.map((item) => (
@@ -79,7 +83,7 @@ const MyTab = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className='grid lg:grid-cols-2 gap-5'>
+                    <div className='grid lg:grid-cols-2 gap-6'>
 
                         {
                             item2.map((item) => (
@@ -91,7 +95,7 @@ const MyTab = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className='grid lg:grid-cols-2 gap-5'>
+                    <div className='grid lg:grid-cols-2 gap-6'>
 
                         {
                             item3.map((item) => (
@@ -103,7 +107,7 @@ const MyTab = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className='grid lg:grid-cols-2 gap-5'>
+                    <div className='grid lg:grid-cols-2 gap-6'>
 
                         {
                             item4.map((item) => (

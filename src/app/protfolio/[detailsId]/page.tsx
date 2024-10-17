@@ -3,6 +3,7 @@ import Navbar from '@/app/component/share/Navbar';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Navlink from '@/app/component/share/Navlink';
 
 
 const page = ({ params }) => {
@@ -39,10 +40,19 @@ const page = ({ params }) => {
                         <h1 className='lg:text-6xl text-2xl font-semibold'>Startup financial model</h1>
                         <p className='lg:text-[18px] font-normal'>Work the way you want using task management software that helps you organize <br /> tasks, delegate work, track progress and communicate.</p>
                         <div className='space-x-4 '>
-                            <Link href="/">Home</Link><span className='font-semibold'>/</span>
 
-                            <Link className='font-semibold' href="/service">Portfolio</Link><span className='font-semibold'>/</span>
-                            <Link className='font-semibold' href="/service">Portfolio Details</Link>
+
+                            <Navlink href="/" activeClassName="text-[16px] font-semibold" nonActiveClassName="font-normal" className="">
+                                Home
+                            </Navlink>
+                            <span className="font-semibold">/</span>
+                            <Navlink href="/protfolio" activeClassName="text-[16px] font-semibold" nonActiveClassName="font-normal" className="">
+                                Portfolio
+                            </Navlink>
+                            <span className="font-semibold">/</span>
+                            <Navlink href="" activeClassName="text-[16px] font-semibold" nonActiveClassName="font-normal" className="text-[16px] font-semibold">
+                                Portfolio Details
+                            </Navlink>
                         </div>
                     </div>
                 </div>
