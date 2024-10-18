@@ -21,7 +21,7 @@ const MyTab = () => {
 
 
     useEffect(() => {
-        fetch("http://localhost:8000/protfolio")
+        fetch("http://localhost:8000/myprotfolio")
             .then(res => res.json())
             .then(data => {
                 console.log(data)
