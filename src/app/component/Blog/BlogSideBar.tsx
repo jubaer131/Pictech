@@ -32,10 +32,10 @@ const BlogSideBar = ({ handleSearch, }) => {
             });
     }, []);
     return (
-        <div className="relative lg:w-[370px]">
+        <div className="relative lg:w-[370px] pt-5">
 
             <div className="space-y-2 ">
-                <h2 className='text-[20px] font-bold'>Search</h2>
+                <h2 className='text-[20px] font-bold '>Search</h2>
                 <form onSubmit={handleSearch} className="input input-bordered flex items-center gap-2">
                     <input type="text" name='search' className="grow" placeholder="Search" />
                     <button type="submit" >

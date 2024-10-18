@@ -17,12 +17,12 @@ const BlogCard = ({ item }) => {
                     />
                 </div>
                 <div className="space-y-5  md:pb-10  ">
-                    <time className=' text-sm font-semibold text-[#2B5BFD] ' datetime="2024-10-12">{item.date}</time>
+                    <time className=' text-[16px] font-semibold text-[#2B5BFD] ' datetime="2024-10-12">{item.date}</time>
 
                     <h3 className="md:text-4xl font-bold dark:text-violet-600 ">{item.title1}</h3>
 
                     <p className="leading-snug dark:text-gray-600 text-[15px]">{item.description1.slice(0, 300)} </p>
-                    <Link href={`/blog/${item._id}`} ><button className='text-[16px]  rounded-none border-b-2 border-[#2B5BFD] pb-2 py-8'>Visit Website</button></Link>
+                    <Link href={`/blog/${item._id}`} ><button className='text-[16px]  rounded-none border-b-2 border-[#47484b] pb-2 py-8'>Visit Website</button></Link>
 
                 </div>
             </div>

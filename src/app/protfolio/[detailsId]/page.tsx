@@ -59,55 +59,56 @@ const page = ({ params }) => {
             </div>
 
 
-            <div className='lg:w-[1297px] mx-auto mt-16'>
+            <div className='lg:w-[1297px] mx-auto lg:mt-16 mt-5 lg:py-10'>
                 <div className="w-full h-auto relative" style={{ aspectRatio: '1296 / 700' }}>
                     <Image
                         src={findprotfolio?.image}
                         layout="fill"
                         objectFit="cover"
                         alt="Picture of the author"
+
                     />
                 </div>
 
 
-                <div className='lg:w-[1048px] mx-auto my-10 space-y-10 p-4'>
-                    <div className='space-y-10 mb-20'>
-                        <h1 className='text-[48px] font-bold'>About Project</h1>
+                <div className='lg:w-[1048px] mx-auto lg:my-10  space-y-10 max-sm:p-6'>
+                    <div className='space-y-10 lg:mb-28'>
+                        <h1 className='text-[48px] font-bold  pt-12'>About Project</h1>
                         <p className='text-[20px]'>{findprotfolio?.description}</p>
                         <p className='text-[20px]'>{findprotfolio?.description1}</p>
-                        <button className='text-[16px]  rounded-none border-b-2 border-[#2B5BFD] pb-2 '>Visit Website</button>
+                        <button className='text-[16px]  rounded-none border-b-2 border-[#1c1c1d] pb-2 '>Visit Website</button>
                     </div>
                     <hr />
-                    <div className='flex justify-between items-center '>
+                    <div className='flex justify-between items-center pt-6'>
                         <div className='lg:w-[282px]'>
-                            <h5 className='text-[18px] text-[#7D7D82]'>Client:</h5>
-                            <h2 className='text-[22px] font-semibold'>Stuart Watkins</h2>
+                            <h5 className='lg:text-[20px] font-normal text-[#7D7D82]'>Client:</h5>
+                            <h2 className='lg:text-[26px] lg:font-semibold font-medium'>Stuart Watkins</h2>
                         </div>
                         <div className='lg:w-[282px]'>
-                            <h5 className='text-[18px] text-[#7D7D82]'>Industry:</h5>
-                            <h2 className='text-[22px] font-semibold'>Sass & Software</h2>
+                            <h5 className='lg:text-[20px] font-normal text-[#7D7D82]'>Industry:</h5>
+                            <h2 className='lg:text-[26px] lg:font-semibold font-medium'>Sass & Software</h2>
                         </div>
                         <div className='lg:w-[282px]'>
-                            <h5 className='text-[18px] text-[#7D7D82]'>Timeline:</h5>
-                            <h2 className='text-[22px] font-semibold'>3 Months</h2>
+                            <h5 className='lg:text-[20px] font-normal text-[#7D7D82]'>Timeline:</h5>
+                            <h2 className='lg:text-[26px] lg:font-semibold font-medium'>3 Months</h2>
                         </div>
                     </div>
                 </div>
-                <div className='lg:flex justify-between items-center '>
-                    <Image
+                <div className='lg:flex justify-between items-center lg:pt-20 pt-10 '>
 
-                        src='https://i.ibb.co.com/rp3Ksft/Image-8.png'
-                        width={638}
-                        height={540}
-                        alt="Picture of the author"
-                    />
-                    <Image
+                    {
+                        findprotfolio?.relatedPictures3?.map((item, index) => (
+                            <Image
+                                key={index}
+                                src={item}
+                                width={638}
+                                height={520}
+                                alt="Picture of the author"
+                                className='lg:w-[638px] lg:h-[540px]'
 
-                        src='https://i.ibb.co.com/rp3Ksft/Image-8.png'
-                        width={638}
-                        height={540}
-                        alt="Picture of the author"
-                    />
+                            />
+                        ))
+                    }
                 </div>
                 <div className="w-full h-auto relative mt-5" style={{ aspectRatio: '1296 / 700' }}>
                     <Image
@@ -115,19 +116,20 @@ const page = ({ params }) => {
                         layout="fill"
                         objectFit="cover"
                         alt="Picture of the author"
+
                     />
                 </div>
-                <div className='lg:w-[1048px] lg:h-[848px] mx-auto space-y-8 py-10'>
+                <div className='lg:w-[1048px]  mx-auto lg:space-y-16 space-y-8 lg:py-32 py-16 max-sm:p-6'>
                     <div>
-                        <h1 className='text-[42px] font-bold'>Problems</h1>
-                        <p className='text-[20px] font-normal'>{findprotfolio?.problems?.slice(0, 600)}</p>
+                        <h1 className='text-[42px] font-bold lg:pb-4'>Problems</h1>
+                        <p className='text-[20px] font-normal '>{findprotfolio?.problems?.slice(0, 600)}</p>
                     </div>
                     <div>
-                        <h1 className='text-[42px] font-bold'>Challanges</h1>
+                        <h1 className='text-[42px] font-bold lg:pb-4'>Challanges</h1>
                         <p className='text-[20px] font-normal'>{findprotfolio?.challenges?.slice(0, 500)}</p>
                     </div>
                     <div>
-                        <h1 className='text-[42px] font-bold'>Our Solutions</h1>
+                        <h1 className='text-[42px] font-bold lg:pb-4'>Our Solutions</h1>
                         <p className='text-[20px] font-normal'>{findprotfolio?.ourSolution?.slice(0, 400)}</p>
                     </div>
                 </div>
@@ -137,11 +139,11 @@ const page = ({ params }) => {
 
 
             {/* third section */}
-            <div className='bg-[#f8f9fc]  py-20'>
+            <div className='bg-[#f8f9fc]  lg:py-32 py-16'>
                 <div className='lg:w-[1290px] mx-auto'>
                     <h1 className='text-5xl font-bold text-center pb-10'>Related Projects</h1>
 
-                    <div className='flex justify-between items-center gap-3'>
+                    <div className='flex justify-between items-start gap-3 max-sm:p-3'>
                         {
                             Portfolio.slice(0, 2).map((item) => (
 

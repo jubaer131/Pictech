@@ -131,6 +131,8 @@ import Image from 'next/image';
 import Navbar from '@/app/component/share/Navbar';
 import Comment from '@/app/component/Blog/Comment';
 import BlogSideBar from '@/app/component/Blog/BlogSideBar';
+import { ClockLoader } from 'react-spinners';
+import Navlink from '@/app/component/share/Navlink';
 
 // Define the type for a blog post
 interface BlogPost {
@@ -170,9 +172,7 @@ const Page: React.FC<PageProps> = ({ params }) => {
     const blogDetails = blog.find((item) => item._id === id);
 
     // Handle loading state or missing blog details
-    if (!blogDetails) {
-        return <p>Loading...</p>;
-    }
+    if (!blogDetails) return <div className="w-full h-[660px] flex items-center justify-center"><ClockLoader color="orange" size={200} />  </div>
 
     const { image1, date, title1, description1, description2, complexsentence, title2, description3, description4, title3, description5 } = blogDetails;
 
@@ -188,16 +188,25 @@ const Page: React.FC<PageProps> = ({ params }) => {
                         <time className='text-[16px] font-semibold text-[#2B5BFD]' dateTime={date}>{date}</time>
                         <h1 className="md:text-[64px] leading-[70px] font-semibold dark:text-violet-600 ">{title1}</h1>
                         <div className='space-x-4'>
-                            <Link href="/">Home</Link><span className='font-semibold'>/</span>
-                            <Link className='font-semibold' href="/service">Blog Classic</Link><span className='font-semibold'>/</span>
-                            <Link className='font-semibold' href="/service">Blog Classic Details</Link>
+
+                            <Navlink href="/" activeClassName="text-[16px] font-semibold" nonActiveClassName="font-normal" className="">
+                                Home
+                            </Navlink>
+                            <span className="font-semibold">/</span>
+                            <Navlink href="/blog" activeClassName="text-[16px] font-semibold" nonActiveClassName="font-normal" className="">
+                                Blog Classic
+                            </Navlink>
+                            <span className="font-semibold">/</span>
+                            <Navlink href="/blog/id" activeClassName="text-[16px] font-semibold" nonActiveClassName="font-normal" className="text-[16px] font-semibold">
+                                Blog Classic Details
+                            </Navlink>
                         </div>
                     </div>
                 </div>
             </div>
 
             {/* Second section */}
-            <div className="md:flex justify-center gap-12 md:max-w-7xl mx-auto md:mt-12 mt-6">
+            <div className="md:flex justify-center gap-16 md:max-w-[1326px] mx-auto md:mt-12 mt-6 lg:py-12 max-sm:p-4">
                 <div className="relative lg:w-[856px] dark:bg-gray-50 dark:text-gray-800">
                     <div className="space-y-8">
                         <div className="w-full h-auto relative mt-5" style={{ aspectRatio: '1296 / 700' }}>

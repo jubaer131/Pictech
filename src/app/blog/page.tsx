@@ -5,6 +5,8 @@ import React, { useEffect, useState } from 'react';
 import Navbar from '../component/share/Navbar';
 import BlogCard from '../component/Blog/BlogCard';
 import BlogSideBar from '../component/Blog/BlogSideBar';
+import { ClockLoader } from 'react-spinners';
+import Navlink from '../component/share/Navlink';
 
 // Define the interface for blog details
 interface BlogDetails {
@@ -82,6 +84,10 @@ const Page: React.FC = () => {
         }
     };
 
+
+
+    if (loading) return <div className="w-full h-[660px] flex items-center justify-center"><ClockLoader color="orange" size={200} />  </div>
+
     return (
         <>
             <div
@@ -99,19 +105,25 @@ const Page: React.FC = () => {
                             <br /> tasks, delegate work, track progress and communicate.
                         </p>
                         <div className='space-x-4 '>
-                            <Link href="/">Home</Link><span className='font-semibold'>/</span>
-                            <Link className='font-semibold' href="/service">Blog Classic</Link>
+
+                            <Navlink href="/" activeClassName="text-[16px] font-semibold" nonActiveClassName="font-normal" className="">
+                                Home
+                            </Navlink>
+                            <span className="font-semibold">/</span>
+                            <Navlink href="/blog" activeClassName="text-[16px] font-semibold" nonActiveClassName="font-normal" className="">
+                                Blog Classic
+                            </Navlink>
                         </div>
                     </div>
                 </div>
             </div>
 
             {/* Blog and Pagination Section */}
-            <div className="md:flex justify-center gap-5 md:max-w-7xl mx-auto md:mt-12 mt-6">
+            <div className="md:flex justify-center lg:gap-16 md:max-w-[1326px] mx-auto md:mt-12 lg:mt-6 pb-24 lg:pt-12 max-sm:p-4">
                 <div className="grid grid-cols-1 gap-4">
                     {/* Show loading indicator when fetching data */}
                     {loading ? (
-                        <div className="text-center">Loading...</div>
+                        <div className="w-full h-[660px] flex items-center justify-center"><ClockLoader color="orange" size={200} />  </div>
                     ) : (
                         blogDetails.map(item => (
                             <BlogCard key={item._id} item={item} />
