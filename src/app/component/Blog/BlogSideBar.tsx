@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
 import BlogSidebarCard from './BlogSidebarCard';
 
 const BlogSideBar = ({ handleSearch, }) => {
@@ -24,7 +22,7 @@ const BlogSideBar = ({ handleSearch, }) => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:8000/detail`)
+        fetch(`https://next-and-typescript-server.vercel.app/detail`)
             .then(res => res.json())
             .then(data => {
                 setpostSidebar(data);

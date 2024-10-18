@@ -21,7 +21,7 @@ const MyTab = () => {
 
 
     useEffect(() => {
-        fetch("http://localhost:8000/myprotfolio")
+        fetch("https://next-and-typescript-server.vercel.app/saaspicprotfolio")
             .then(res => res.json())
             .then(data => {
                 console.log(data)

@@ -37,7 +37,7 @@ const Page: React.FC = () => {
         const fetchBlogPosts = async () => {
             setLoading(true);  // Set loading to true when fetching starts
             try {
-                const response = await fetch(`http://localhost:8000/blogpost?search=${search}&page=${currentPage}&size=${itemsPerPage}`);
+                const response = await fetch(`https://next-and-typescript-server.vercel.app/blogpost?search=${search}&page=${currentPage}&size=${itemsPerPage}`);
                 const data: BlogDetails[] = await response.json();
                 setBlogDetails(data);
             } catch (error) {
@@ -55,7 +55,7 @@ const Page: React.FC = () => {
     useEffect(() => {
         const fetchPaginationCount = async () => {
             try {
-                const response = await fetch('http://localhost:8000/paginationcount');
+                const response = await fetch('https://next-and-typescript-server.vercel.app/paginationcount');
                 const data: PaginationCount = await response.json();
                 setCount(data.count);
             } catch (error) {

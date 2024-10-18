@@ -11,7 +11,7 @@ const page = ({ params }) => {
     const [Portfolio, setPortfolio] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:8000/protfolio")
+        fetch("https://next-and-typescript-server.vercel.app/saaspicprotfolio")
             .then(res => res.json())
             .then(data => {
                 console.log(data)
