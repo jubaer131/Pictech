@@ -2,7 +2,20 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const ProtfolioDetails = ({ item }) => {
+
+interface ProtfolioItem {
+    _id: string;
+    image: string;
+    title: string;
+    typeOfBusiness: string;
+}
+
+// Define the props interface that expects the item object
+interface ProtfolioDetailsProps {
+    item: ProtfolioItem;
+}
+
+const ProtfolioDetails: React.FC<ProtfolioDetailsProps> = ({ item }) => {
     return (
         <Link href={`/protfolio/${item._id}`} className='pb-6'>
             <div className=" dark:bg-gray-50 dark:text-gray-800">

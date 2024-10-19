@@ -77,7 +77,7 @@ const Feedback = () => {
         return () => {
             newSlider.destroy();
         };
-    }, [recommendations]);
+    }, []);
 
     const handlePrevClick = () => {
         if (slider) {

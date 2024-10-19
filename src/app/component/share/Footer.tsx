@@ -1,9 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { CiTwitter } from "react-icons/ci";
-import { FaFacebook } from "react-icons/fa";
-import { CiInstagram } from "react-icons/ci";
-import { IoLogoGithub } from "react-icons/io5";
+
 import Link from 'next/link';
 
 const Footer = () => {

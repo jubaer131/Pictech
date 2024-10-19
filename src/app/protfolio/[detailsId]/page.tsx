@@ -31,7 +31,7 @@ interface PortfolioItem {
 }
 
 
-const page: React.FC<PageProps> = ({ params }) => {
+const Page: React.FC<PageProps> = ({ params }) => {
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [Portfolio, setPortfolio] = useState<PortfolioItem[]>([])
@@ -210,4 +210,4 @@ const page: React.FC<PageProps> = ({ params }) => {
     );
 };
 
-export default page;
+export default Page;
