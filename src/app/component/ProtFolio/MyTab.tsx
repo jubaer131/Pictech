@@ -11,6 +11,9 @@ import { ClockLoader } from 'react-spinners';
 interface PortfolioItem {
     _id: string;
     typeOfBusiness33: string;
+    image: string;
+    title: string;
+    typeOfBusiness: string;
 
 }
 
