@@ -64,7 +64,7 @@ const AboutSectionSlider: React.FC = () => {
     return (
         <>
             <div className="text-center lg:pb-20 ">
-                <h1 className="lg:text-5xl text-4xl font-bold">Don't just take our word for it</h1>
+                <h1 className="lg:text-5xl text-4xl font-bold">Do not just take our word for it</h1>
             </div>
             <div ref={sliderRef} className="keen-slider">
                 {reviews.map((review, index) => (

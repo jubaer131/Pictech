@@ -1,6 +1,5 @@
 import React from 'react';
-import { FaArrowLeft } from "react-icons/fa6";
-import { FaArrowRight } from "react-icons/fa6";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import Image from 'next/image';
 import { MdReply } from "react-icons/md";
 

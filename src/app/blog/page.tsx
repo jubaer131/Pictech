@@ -13,6 +13,7 @@ interface BlogDetails {
     title: string;
     content: string;
 
+
 }
 
 
@@ -23,7 +24,7 @@ interface PaginationCount {
 const Page: React.FC = () => {
     const [blogDetails, setBlogDetails] = useState<BlogDetails[]>([]);  // State for blog details with the correct type
     const [search, setSearch] = useState<string>('');  // State for search input
-    const [itemsPerPage, setItemsPerPage] = useState<number>(5);  // State for items per page
+    const [itemsPerPage] = useState<number>(5);  // State for items per page
     const [count, setCount] = useState<number>(1);  // State for total number of items
     const [currentPage, setCurrentPage] = useState<number>(1);  // State for current page
     const [loading, setLoading] = useState<boolean>(false);  // State for loading

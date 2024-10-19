@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import 'react-tabs/style/react-tabs.css';
+// import 'react-tabs/style/react-tabs.css';
 import AboutSectionSlider from '../component/homepage/AboutSectionSlider';
 import AboutBanner from '../component/share/AboutBanner';
 import MyTab from '../component/homepage/AboutPage/MyTab';
