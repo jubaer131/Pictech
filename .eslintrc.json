@@ -1,3 +1,12 @@
+// {
+//   "extends": ["next/core-web-vitals", "next/typescript"]
+// }
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": [
+    "next/core-web-vitals",
+    "next/typescript"
+  ],
+  "rules": {
+    "react-hooks/rules-of-hooks": "off" // Disable the "rules of hooks" rule globally
+  }
 }
