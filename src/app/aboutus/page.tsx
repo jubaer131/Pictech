@@ -41,7 +41,7 @@ const page = () => {
                     <div className='lg:w-1/2 space-y-10 md:pl-16 max-sm:p-4'>
 
                         <h1 className='text-5xl  font-bold '>Place to develop your business grwoth</h1>
-                        <p>Design Season is a collaboration between Leicester's creative hub LCB based in the city's cultural quarter and designers and design businesses all over the city & county</p>
+                        <p>Design Season is a collaboration between Leicester  creative hub LCB based in the city  cultural quarter and designers and design businesses all over the city & county</p>
                         <p>By creating a strong brand presence on social media, you can reach broader audience get partners brand advocates</p>
 
                         <Link href="#"><button className='btn bg-[#2a5bfc] mt-5 text-white hover:bg-white hover:text-[#2a5bfc] '>Try pree version</button></Link>

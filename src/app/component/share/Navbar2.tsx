@@ -5,7 +5,17 @@ import React from "react";
 import { MdOutlineExpandMore } from "react-icons/md";
 import Image from "next/image";
 
-const NavLink = ({
+
+interface NavLinkProps {
+    children: React.ReactNode;
+    href: string;
+    activeClassName: string;
+    nonActiveClassName: string;
+    className?: string;
+
+}
+
+const NavLink: React.FC<NavLinkProps> = ({
     children,
     href,
     activeClassName,
@@ -134,10 +144,10 @@ const Navbar2 = () => {
                         </ul>
                     </div>
                     <NavLink href="/protfolio" activeClassName="text-[#2b5bfd]" nonActiveClassName="text-white" className="hover:text-[#2b5bfd] font-medium lg:pr-6 lg:pl-6 flex items-center ">
-                        Protfolio <MdOutlineExpandMore className="text-xl" />
+                        Protfolio <span className="text-xl"><MdOutlineExpandMore /></span>
                     </NavLink>
                     <NavLink href="/blog" activeClassName="text-[#2b5bfd]" nonActiveClassName="text-white" className="hover:text-[#2b5bfd] font-medium lg:pr-6 flex items-center ">
-                        Blog <MdOutlineExpandMore className="text-xl" />
+                        Blog <span className="text-xl"><MdOutlineExpandMore /></span>
                     </NavLink>
                     <NavLink href="/contractus" activeClassName="text-[#2b5bfd]" nonActiveClassName="text-white" className="hover:text-[#2b5bfd] font-medium lg:pr-6">
                         Contact Us

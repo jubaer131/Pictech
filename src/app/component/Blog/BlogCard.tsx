@@ -2,7 +2,20 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const BlogCard = ({ item }) => {
+
+interface BlogCardProps {
+    item: {
+        _id: string;
+        image1: string;
+        date: string;
+        title1: string;
+        description1: string;
+
+    };
+}
+
+
+const BlogCard: React.FC<BlogCardProps> = ({ item }) => {
     return (
         <div className="relative lg:w-[856px] dark:bg-gray-50 dark:text-gray-800  ">
 
@@ -17,7 +30,7 @@ const BlogCard = ({ item }) => {
                     />
                 </div>
                 <div className="space-y-5  md:pb-10  ">
-                    <time className=' text-[16px] font-semibold text-[#2B5BFD] ' datetime="2024-10-12">{item.date}</time>
+                    <time className=' text-[16px] font-semibold text-[#2B5BFD] ' dateTime="2024-10-12">{item.date}</time>
 
                     <h3 className="md:text-4xl font-bold dark:text-violet-600 ">{item.title1}</h3>
 

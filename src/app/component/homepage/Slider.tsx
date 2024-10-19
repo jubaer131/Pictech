@@ -64,8 +64,8 @@ const AboutSectionSlider: React.FC = () => {
     return (
         <>
             <div className="lg:text-center lg:py-20 py-10 space-y-4">
-                <h1 className="text-5xl font-semibold max-sm:text-center">Don't just take our word for it</h1>
-                <p className="text-[18px] font-normal max-sm:p-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum <br /> industry's standard dummy text ever since the 1500s</p>
+                <h1 className="text-5xl font-semibold max-sm:text-center">Do not just take our word for it</h1>
+                <p className="text-[18px] font-normal max-sm:p-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum <br /> industry standard dummy text ever since the 1500s</p>
             </div>
             <div ref={sliderRef} className="keen-slider">
                 {reviews.map((review, index) => (

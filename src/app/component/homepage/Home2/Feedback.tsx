@@ -2,14 +2,25 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react";
-import KeenSlider from "keen-slider";
+import KeenSlider, { KeenSliderInstance } from "keen-slider";
 import "keen-slider/keen-slider.min.css";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import Image from "next/image";
 import { IoIosStar } from "react-icons/io";
 
 
-const recommendations = [
+
+interface Recommendation {
+    logo: string;
+    rating: number;
+    text: string;
+    authorImage: string;
+    authorName: string;
+    authorTitle: string;
+}
+
+
+const recommendations: Recommendation[] = [
     {
         logo: "https://i.ibb.co.com/FXYKzDv/Image-20.png",
         rating: 5,
@@ -37,8 +48,8 @@ const recommendations = [
 ];
 
 const Feedback = () => {
-    const sliderRef = useRef(null);
-    const [slider, setSlider] = useState(null);
+    const sliderRef = useRef<HTMLDivElement | null>(null);
+    const [slider, setSlider] = useState<KeenSliderInstance | null>(null);
 
     useEffect(() => {
         if (!sliderRef.current || recommendations.length === 0) return;

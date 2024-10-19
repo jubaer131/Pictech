@@ -1,7 +1,16 @@
 import Link from 'next/link';
 import React from 'react';
 import Image from 'next/image';
-const BlogSidebarCard = ({ item }) => {
+
+
+interface BlogSidebarCardProps {
+    item: {
+        _id: string;
+        image1: string;
+        title1: string;
+    };
+}
+const BlogSidebarCard: React.FC<BlogSidebarCardProps> = ({ item }) => {
     return (
         <div className="flex justify-start gap-2  hover:text-[#005294]">
             <Image

@@ -1,6 +1,5 @@
 "use client";
 
-import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import Navbar from '../component/share/Navbar';
 import BlogCard from '../component/Blog/BlogCard';
@@ -13,10 +12,10 @@ interface BlogDetails {
     _id: string;
     title: string;
     content: string;
-    // Add other properties as needed from your blog details
+
 }
 
-// Define the response structure for pagination count
+
 interface PaginationCount {
     count: number;
 }
@@ -51,7 +50,7 @@ const Page: React.FC = () => {
 
 
 
-    // Fetch the total count of blog posts
+
     useEffect(() => {
         const fetchPaginationCount = async () => {
             try {

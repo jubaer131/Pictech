@@ -13,6 +13,7 @@ import Navlink from '@/app/component/share/Navlink';
 interface BlogPost {
     _id: string;
     date: string;
+    image1: string;
     title1: string;
     description1: string;
     description2: string;
@@ -23,6 +24,7 @@ interface BlogPost {
     image2: string;
     title3: string;
     description5: string;
+
 }
 
 // Define the props type for the page component
@@ -36,7 +38,7 @@ const Page: React.FC<PageProps> = ({ params }) => {
     const [blog, setBlog] = useState<BlogPost[]>([]); // Define blog state with BlogPost type array
 
     useEffect(() => {
-        fetch(`http://localhost:8000/detail`)
+        fetch(`https://next-and-typescript-server.vercel.app/detail`)
             .then(res => res.json())
             .then((data: BlogPost[]) => {
                 setBlog(data);
@@ -46,7 +48,7 @@ const Page: React.FC<PageProps> = ({ params }) => {
     const { id } = params;
     const blogDetails = blog.find((item) => item._id === id);
 
-    // Handle loading state or missing blog details
+
     if (!blogDetails) return <div className="w-full h-[660px] flex items-center justify-center"><ClockLoader color="orange" size={200} />  </div>
 
     const { image1, date, title1, description1, description2, complexsentence, title2, description3, description4, title3, description5 } = blogDetails;
@@ -136,7 +138,9 @@ const Page: React.FC<PageProps> = ({ params }) => {
                     </div>
                 </div>
                 {/* Sidebar */}
-                <BlogSideBar />
+                <BlogSideBar handleSearch={function (): void {
+                    throw new Error('Function not implemented.');
+                }} />
             </div>
         </>
     );

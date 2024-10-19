@@ -3,6 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { PiCheck } from "react-icons/pi";
 
+
+
+
 const PowerfulFeature = () => {
     return (
         <div className='max-w-[1305px] mx-auto lg:mt-32'>

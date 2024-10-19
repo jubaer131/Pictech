@@ -8,14 +8,20 @@ import { ClockLoader } from 'react-spinners';
 
 
 
-const MyTab = () => {
+interface PortfolioItem {
+    _id: string;
+    typeOfBusiness33: string;
+
+}
+
+const MyTab: React.FC = () => {
 
 
-    const [Portfolio, setPortfolio] = useState([])
+    const [Portfolio, setPortfolio] = useState<PortfolioItem[]>([])
 
     const [activeTabIndex, setActiveTabIndex] = useState(0);
 
-    const handleTabClick = (index) => {
+    const handleTabClick = (index: number) => {
         setActiveTabIndex(index);
     };
 

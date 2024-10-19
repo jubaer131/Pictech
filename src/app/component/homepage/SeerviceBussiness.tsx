@@ -13,9 +13,9 @@ import Link from 'next/link';
 const SeerviceBussiness = () => {
 
 
-    const [activeTabIndex, setActiveTabIndex] = useState(0); // Track active tab index
+    const [activeTabIndex, setActiveTabIndex] = useState<number>(0); // Track active tab index
 
-    const handleTabClick = (index) => {
+    const handleTabClick = (index: number) => {
         setActiveTabIndex(index); // Set the active tab index on click
     };
 
@@ -53,7 +53,7 @@ const SeerviceBussiness = () => {
     return (
         <div className='lg:w-[1260px] mx-auto lg:py-28 pb-4 pt-16'>
             <h1 className='text-center mb-4 text-4xl font-bold'>Built for service businesses of all <br /> types and sizes</h1>
-            <p className='text-[18px] text-center font-normal max-sm:p-5 lg:mb-10'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum <br className='max-sm:hidden' /> industry's standard dummy text ever since the 1500s</p>
+            <p className='text-[18px] text-center font-normal max-sm:p-5 lg:mb-10'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum <br className='max-sm:hidden' /> industry  standard dummy text ever since the 1500s</p>
 
             <Tabs>
 

@@ -45,7 +45,7 @@ const page = () => {
                         alt="Picture of the author"
                     />
                     <h1 className='text-2xl font-bold pt-2'>Programmatic SEO</h1>
-                    <p className='text-[18px]'>With our innovative consulting today's breakthroughs Deliver a better owner experience, more value, transparency, and trust.</p>
+                    <p className='text-[18px]'>With our innovative consulting today  breakthroughs Deliver a better owner experience, more value, transparency, and trust.</p>
                 </div>
                 <div className='lg:w-[416px] h-[400px] space-y-5 px-10 bg-[#f8f9fc] py-16 rounded-2xl'>
                     <Image
@@ -56,7 +56,7 @@ const page = () => {
                         alt="Picture of the author"
                     />
                     <h1 className='text-2xl font-bold pt-2'>Programmatic SEO</h1>
-                    <p className='text-[18px]'>With our innovative consulting today's breakthroughs Deliver a better owner experience, more value, transparency, and trust.</p>
+                    <p className='text-[18px]'>With our innovative consulting today  breakthroughs Deliver a better owner experience, more value, transparency, and trust.</p>
                 </div>
                 <div className='lg:w-[416px] h-[400px] space-y-5 px-10 bg-[#f8f9fc] py-16 rounded-2xl'>
                     <Image
@@ -67,7 +67,7 @@ const page = () => {
                         alt="Picture of the author"
                     />
                     <h1 className='text-2xl font-bold pt-2'>Programmatic SEO</h1>
-                    <p className='text-[18px]'>With our innovative consulting today's breakthroughs Deliver a better owner experience, more value, transparency, and trust.</p>
+                    <p className='text-[18px]'>With our innovative consulting today  breakthroughs Deliver a better owner experience, more value, transparency, and trust.</p>
                 </div>
                 <div className='lg:w-[416px] h-[400px] space-y-5 px-10 bg-[#f8f9fc] py-16 rounded-2xl'>
                     <Image
@@ -78,7 +78,7 @@ const page = () => {
                         alt="Picture of the author"
                     />
                     <h1 className='text-2xl font-bold pt-2'>Programmatic SEO</h1>
-                    <p className='text-[18px]'>With our innovative consulting today's breakthroughs Deliver a better owner experience, more value, transparency, and trust.</p>
+                    <p className='text-[18px]'>With our innovative consulting today  breakthroughs Deliver a better owner experience, more value, transparency, and trust.</p>
                 </div>
                 <div className='lg:w-[416px] h-[400px] space-y-5 px-10 bg-[#f8f9fc] py-16 rounded-2xl'>
                     <Image
@@ -89,7 +89,7 @@ const page = () => {
                         alt="Picture of the author"
                     />
                     <h1 className='text-2xl font-bold pt-2'>Programmatic SEO</h1>
-                    <p className='text-[18px]'>With our innovative consulting today's breakthroughs Deliver a better owner experience, more value, transparency, and trust.</p>
+                    <p className='text-[18px]'>With our innovative consulting today breakthroughs Deliver a better owner experience, more value, transparency, and trust.</p>
                 </div>
                 <div className='lg:w-[416px] h-[400px] space-y-5 px-10 bg-[#f8f9fc] py-16 rounded-2xl'>
                     <Image
@@ -100,7 +100,7 @@ const page = () => {
                         alt="Picture of the author"
                     />
                     <h1 className='text-2xl font-bold pt-2'>Programmatic SEO</h1>
-                    <p className='text-[18px]'>With our innovative consulting today's breakthroughs Deliver a better owner experience, more value, transparency, and trust.</p>
+                    <p className='text-[18px]'>With our innovative consulting today breakthroughs Deliver a better owner experience, more value, transparency, and trust.</p>
                 </div>
             </div>
             {/* third section */}

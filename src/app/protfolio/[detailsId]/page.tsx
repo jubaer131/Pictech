@@ -4,16 +4,42 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Navlink from '@/app/component/share/Navlink';
+import { ClockLoader } from 'react-spinners';
 
 
-const page = ({ params }) => {
 
-    const [Portfolio, setPortfolio] = useState([])
+// Define the expected type for params
+interface PageProps {
+    params: {
+        detailsId: string;
+    };
+}
+
+
+interface PortfolioItem {
+    _id: string;
+    title: string;
+    src: string;
+    image: string;
+    description: string;
+    description1?: string;
+    typeOfBusiness: string;
+    relatedPictures3?: string[];
+    problems?: string;
+    challenges?: string;
+    ourSolution?: string;
+}
+
+
+const page: React.FC<PageProps> = ({ params }) => {
+
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const [Portfolio, setPortfolio] = useState<PortfolioItem[]>([])
 
     useEffect(() => {
         fetch("https://next-and-typescript-server.vercel.app/saaspicprotfolio")
             .then(res => res.json())
-            .then(data => {
+            .then((data: PortfolioItem[]) => {
                 console.log(data)
                 setPortfolio(data)
             })
@@ -24,7 +50,12 @@ const page = ({ params }) => {
 
     const findprotfolio = Portfolio.find(product => product._id === detailsId);
 
-    console.log(findprotfolio)
+
+
+
+    if (!findprotfolio) {
+        return <div className="w-full h-[660px] flex items-center justify-center"><ClockLoader color="orange" size={150} />  </div>
+    }
 
 
     return (

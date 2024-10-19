@@ -1,25 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import BlogSidebarCard from './BlogSidebarCard';
 
-const BlogSideBar = ({ handleSearch, }) => {
-
-    const [postSidebar, setpostSidebar] = useState([])
 
 
-    interface BlogPost {
-        _id: string;
-        date: string;
-        title1: string;
-        description1: string;
-        description2: string;
-        complexsentence: string;
-        title2: string;
-        description3: string;
-        description4: string;
-        image2: string;
-        title3: string;
-        description5: string;
-    }
+interface BlogPost {
+    _id: string;
+    date: string;
+    image1: string;
+    title1: string;
+    description1: string;
+    description2: string;
+    complexsentence: string;
+    title2: string;
+    description3: string;
+    description4: string;
+    image2: string;
+    title3: string;
+    description5: string;
+
+
+}
+interface BlogSideBarProps {
+    handleSearch: (event: React.FormEvent) => void;
+}
+
+const BlogSideBar: React.FC<BlogSideBarProps> = ({ handleSearch, }) => {
+
+    const [postSidebar, setpostSidebar] = useState<BlogPost[]>([])
+
 
     useEffect(() => {
         fetch(`https://next-and-typescript-server.vercel.app/detail`)
