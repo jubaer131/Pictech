@@ -1,7 +1,6 @@
 "use client"
 import React from 'react';
 import Navbar from '../component/share/Navbar';
-import Link from 'next/link';
 import MyTab from '../component/ProtFolio/MyTab';
 import Navlink from '../component/share/Navlink';
 
