@@ -21,6 +21,7 @@ interface BlogDetails {
 }
 
 
+
 interface PaginationCount {
     count: number;
 }
@@ -70,11 +71,16 @@ const Page: React.FC = () => {
     }, []);
 
 
-    const handleSearch = (e) => {
+
+
+    const handleSearch = (e: React.FormEvent<Element>) => {
         e.preventDefault();
-        const text = e.target.search.value;
+        const text = (e.target as HTMLFormElement).search.value;
         setSearch(text);
     };
+
+
+
 
     // Handle pagination button click
     const handleBtn = (value: number) => {
