@@ -130,7 +130,7 @@ const Page: React.FC = () => {
 
             {/* Blog and Pagination Section */}
             {
-                count ? <div className="md:flex justify-center lg:gap-16 md:max-w-[1326px] mx-auto md:mt-12 lg:mt-6 pb-24 lg:pt-12 max-sm:p-4">
+                blogDetails ? <div className="md:flex justify-center lg:gap-16 md:max-w-[1326px] mx-auto md:mt-12 lg:mt-6 pb-24 lg:pt-12 max-sm:p-4">
                     <div className="grid grid-cols-1 gap-4">
                         {/* Show loading indicator when fetching data */}
                         {loading ? (
