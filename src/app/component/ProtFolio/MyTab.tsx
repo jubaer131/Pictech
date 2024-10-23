@@ -53,81 +53,84 @@ const MyTab: React.FC = () => {
 
     return (
         <div >
-            <Tabs>
-                <TabList className="lg:flex items-center justify-between lg:w-[466px] mx-auto max-sm:grid grid-cols-3 gap-2 max-sm:p-5 my-12">
-                    {["All", "Bussiness", "Corporate", "Creative", "Startup"].map((tabName, index) => (
-                        <Tab
-                            key={index}
-                            className="focus:outline-none cursor-pointer "
-                            onClick={() => handleTabClick(index)}
-                        >
 
-                            <div className={`border border-[#E6E8F1] lg:h-11  flex justify-between  items-center gap-7  p-2 rounded-[4px] ${activeTabIndex === index ? 'text-white bg-violet-600' : 'text-[#6d7568]'}`}>
-                                <button className={` p-2 rounded-md ${activeTabIndex === index ? 'text-white bg-violet-600' : 'text-[#6d7568]'}`}>{tabName}</button>
-                            </div>
-                        </Tab>
-                    ))}
+            {
+                Portfolio ? <Tabs>
+                    <TabList className="lg:flex items-center justify-between lg:w-[466px] mx-auto max-sm:grid grid-cols-3 gap-2 max-sm:p-5 my-12">
+                        {["All", "Bussiness", "Corporate", "Creative", "Startup"].map((tabName, index) => (
+                            <Tab
+                                key={index}
+                                className="focus:outline-none cursor-pointer "
+                                onClick={() => handleTabClick(index)}
+                            >
 
-                </TabList>
+                                <div className={`border border-[#E6E8F1] lg:h-11  flex justify-between  items-center gap-7  p-2 rounded-[4px] ${activeTabIndex === index ? 'text-white bg-violet-600' : 'text-[#6d7568]'}`}>
+                                    <button className={` p-2 rounded-md ${activeTabIndex === index ? 'text-white bg-violet-600' : 'text-[#6d7568]'}`}>{tabName}</button>
+                                </div>
+                            </Tab>
+                        ))}
 
-                <TabPanel >
-                    <div className='grid lg:grid-cols-2 gap-6 max-sm:p-5 '>
-                        {
-                            Portfolio.map((item) => (
-                                <ProtfolioDetails key={item._id} item={item}></ProtfolioDetails>
-                            ))
-                        }
-                    </div>
-                </TabPanel>
-                <TabPanel>
-                    <div className='grid lg:grid-cols-2 gap-6'>
+                    </TabList>
 
-                        {
-                            item1.map((item) => (
-                                <ProtfolioDetails key={item._id} item={item}></ProtfolioDetails>
-                            ))
-                        }
+                    <TabPanel >
+                        <div className='grid lg:grid-cols-2 gap-6 max-sm:p-5 '>
+                            {
+                                Portfolio.map((item) => (
+                                    <ProtfolioDetails key={item._id} item={item}></ProtfolioDetails>
+                                ))
+                            }
+                        </div>
+                    </TabPanel>
+                    <TabPanel>
+                        <div className='grid lg:grid-cols-2 gap-6'>
 
-
-                    </div>
-                </TabPanel>
-                <TabPanel>
-                    <div className='grid lg:grid-cols-2 gap-6'>
-
-                        {
-                            item2.map((item) => (
-                                <ProtfolioDetails key={item._id} item={item}></ProtfolioDetails>
-                            ))
-                        }
+                            {
+                                item1.map((item) => (
+                                    <ProtfolioDetails key={item._id} item={item}></ProtfolioDetails>
+                                ))
+                            }
 
 
-                    </div>
-                </TabPanel>
-                <TabPanel>
-                    <div className='grid lg:grid-cols-2 gap-6'>
+                        </div>
+                    </TabPanel>
+                    <TabPanel>
+                        <div className='grid lg:grid-cols-2 gap-6'>
 
-                        {
-                            item3.map((item) => (
-                                <ProtfolioDetails key={item._id} item={item}></ProtfolioDetails>
-                            ))
-                        }
-
-
-                    </div>
-                </TabPanel>
-                <TabPanel>
-                    <div className='grid lg:grid-cols-2 gap-6'>
-
-                        {
-                            item4.map((item) => (
-                                <ProtfolioDetails key={item._id} item={item}></ProtfolioDetails>
-                            ))
-                        }
+                            {
+                                item2.map((item) => (
+                                    <ProtfolioDetails key={item._id} item={item}></ProtfolioDetails>
+                                ))
+                            }
 
 
-                    </div>
-                </TabPanel>
-            </Tabs>
+                        </div>
+                    </TabPanel>
+                    <TabPanel>
+                        <div className='grid lg:grid-cols-2 gap-6'>
+
+                            {
+                                item3.map((item) => (
+                                    <ProtfolioDetails key={item._id} item={item}></ProtfolioDetails>
+                                ))
+                            }
+
+
+                        </div>
+                    </TabPanel>
+                    <TabPanel>
+                        <div className='grid lg:grid-cols-2 gap-6'>
+
+                            {
+                                item4.map((item) => (
+                                    <ProtfolioDetails key={item._id} item={item}></ProtfolioDetails>
+                                ))
+                            }
+
+
+                        </div>
+                    </TabPanel>
+                </Tabs> : <div className="w-full h-[660px] flex items-center justify-center"><ClockLoader color="orange" size={200} />  </div>
+            }
         </div>
     );
 };
