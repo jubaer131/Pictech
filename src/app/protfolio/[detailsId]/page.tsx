@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Navlink from '@/app/component/share/Navlink';
 import { ClockLoader } from 'react-spinners';
+import Link from 'next/link';
 
 
 
