@@ -12,6 +12,10 @@ interface BlogDetails {
     _id: string;
     title: string;
     content: string;
+    image1: string;
+    date: string;
+    title1: string;
+    description1: string;
 
 
 }
