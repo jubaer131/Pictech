@@ -96,12 +96,12 @@ const Page: React.FC = () => {
 
 
 
-    if (loading) return <div className="w-full h-[660px] flex items-center justify-center"><ClockLoader color="orange" size={200} />  </div>
+    // if (loading) return <div className="w-full h-[660px] flex items-center justify-center"><ClockLoader color="orange" size={200} />  </div>
 
     return (
         <>
             {
-                blogDetails && count && currentPage ? <div>
+                blogDetails && count ? <div>
                     <div
                         style={{
                             backgroundImage: "url(https://i.ibb.co.com/WGV9tQw/Background-2.png)",
