@@ -101,7 +101,7 @@ const Page: React.FC = () => {
     return (
         <>
             {
-                blogDetails && count ? <div>
+                blogDetails && count && !loading ? <div>
                     <div
                         style={{
                             backgroundImage: "url(https://i.ibb.co.com/WGV9tQw/Background-2.png)",
