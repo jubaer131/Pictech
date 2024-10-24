@@ -100,90 +100,95 @@ const Page: React.FC = () => {
 
     return (
         <>
-            <div
-                style={{
-                    backgroundImage: "url(https://i.ibb.co.com/WGV9tQw/Background-2.png)",
-                }}
-                className='lg:h-[580px]'
-            >
-                <Navbar />
-                <div className='lg:h-[300px] lg:w-[1000px] mx-auto max-sm:p-6 lg:pt-28'>
-                    <div className='text-center lg:space-y-5 space-y-3'>
-                        <h1 className='lg:text-6xl text-2xl font-semibold'>Blog Classic</h1>
-                        <p className='lg:text-[18px] font-normal'>
-                            Work the way you want using task management software that helps you organize
-                            <br /> tasks, delegate work, track progress and communicate.
-                        </p>
-                        <div className='space-x-4 '>
-
-                            <Navlink href="/" activeClassName="text-[16px] font-semibold" nonActiveClassName="font-normal" className="">
-                                Home
-                            </Navlink>
-                            <span className="font-semibold">/</span>
-                            <Navlink href="/blog" activeClassName="text-[16px] font-semibold" nonActiveClassName="font-normal" className="">
-                                Blog Classic
-                            </Navlink>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {/* Blog and Pagination Section */}
             {
-                blogDetails ? <div className="md:flex justify-center lg:gap-16 md:max-w-[1326px] mx-auto md:mt-12 lg:mt-6 pb-24 lg:pt-12 max-sm:p-4">
-                    <div className="grid grid-cols-1 gap-4">
-                        {/* Show loading indicator when fetching data */}
-                        {loading ? (
-                            <div className="w-full h-[660px] flex items-center justify-center"><ClockLoader color="orange" size={200} />  </div>
-                        ) : (
-                            blogDetails.map(item => (
-                                <BlogCard key={item._id} item={item} />
-                            ))
-                        )}
+                blogDetails && count && currentPage ? <div>
+                    <div
+                        style={{
+                            backgroundImage: "url(https://i.ibb.co.com/WGV9tQw/Background-2.png)",
+                        }}
+                        className='lg:h-[580px]'
+                    >
+                        <Navbar />
+                        <div className='lg:h-[300px] lg:w-[1000px] mx-auto max-sm:p-6 lg:pt-28'>
+                            <div className='text-center lg:space-y-5 space-y-3'>
+                                <h1 className='lg:text-6xl text-2xl font-semibold'>Blog Classic</h1>
+                                <p className='lg:text-[18px] font-normal'>
+                                    Work the way you want using task management software that helps you organize
+                                    <br /> tasks, delegate work, track progress and communicate.
+                                </p>
+                                <div className='space-x-4 '>
 
-                        {/* Pagination buttons */}
-                        <div className="flex justify-start space-x-1 dark:text-gray-800 mb-8">
-                            {pages.map(btnNum => (
-                                <button
-                                    onClick={() => handleBtn(btnNum)}
-                                    key={btnNum}
-                                    className={`${currentPage === btnNum
-                                        ? 'bg-orange-400 text-gray-900 border'
-                                        : 'border bg-white text-gray-900'
-                                        } px-4 py-2 mx-1 transition-colors duration-300 transform rounded-md sm:inline hover:bg-orange-700 hover:text-white`}
-                                >
-                                    {btnNum}
-                                </button>
-                            ))}
-
-                            {/* Next button */}
-                            <button
-                                disabled={currentPage === numberOfPages}
-                                onClick={handleNext}
-                                type="button"
-                                className="inline-flex items-center justify-center p-3 w-10 h-10 text-sm border rounded dark:bg-gray-50 dark:border-gray-100"
-                                title="Next Page"
-                            >
-                                <svg
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    fill="none"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    className="w-4"
-                                >
-                                    <polyline points="9 18 15 12 9 6" />
-                                </svg>
-                            </button>
+                                    <Navlink href="/" activeClassName="text-[16px] font-semibold" nonActiveClassName="font-normal" className="">
+                                        Home
+                                    </Navlink>
+                                    <span className="font-semibold">/</span>
+                                    <Navlink href="/blog" activeClassName="text-[16px] font-semibold" nonActiveClassName="font-normal" className="">
+                                        Blog Classic
+                                    </Navlink>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    {/* Blog Sidebar */}
-                    <div className="relative lg:w-[370px]">
-                        <BlogSideBar handleSearch={handleSearch} />
+                    {/* Blog and Pagination Section */}
+
+                    <div className="md:flex justify-center lg:gap-16 md:max-w-[1326px] mx-auto md:mt-12 lg:mt-6 pb-24 lg:pt-12 max-sm:p-4">
+                        <div className="grid grid-cols-1 gap-4">
+                            {/* Show loading indicator when fetching data */}
+                            {loading ? (
+                                <div className="w-full h-[660px] flex items-center justify-center"><ClockLoader color="orange" size={200} />  </div>
+                            ) : (
+                                blogDetails.map(item => (
+                                    <BlogCard key={item._id} item={item} />
+                                ))
+                            )}
+
+                            {/* Pagination buttons */}
+                            <div className="flex justify-start space-x-1 dark:text-gray-800 mb-8">
+                                {pages.map(btnNum => (
+                                    <button
+                                        onClick={() => handleBtn(btnNum)}
+                                        key={btnNum}
+                                        className={`${currentPage === btnNum
+                                            ? 'bg-orange-400 text-gray-900 border'
+                                            : 'border bg-white text-gray-900'
+                                            } px-4 py-2 mx-1 transition-colors duration-300 transform rounded-md sm:inline hover:bg-orange-700 hover:text-white`}
+                                    >
+                                        {btnNum}
+                                    </button>
+                                ))}
+
+                                {/* Next button */}
+                                <button
+                                    disabled={currentPage === numberOfPages}
+                                    onClick={handleNext}
+                                    type="button"
+                                    className="inline-flex items-center justify-center p-3 w-10 h-10 text-sm border rounded dark:bg-gray-50 dark:border-gray-100"
+                                    title="Next Page"
+                                >
+                                    <svg
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                        strokeWidth="2"
+                                        fill="none"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        className="w-4"
+                                    >
+                                        <polyline points="9 18 15 12 9 6" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Blog Sidebar */}
+                        <div className="relative lg:w-[370px]">
+                            <BlogSideBar handleSearch={handleSearch} />
+                        </div>
                     </div>
-                </div> : <div className="w-full h-[660px] flex items-center justify-center"><ClockLoader color="orange" size={200} />  </div>
+
+
+                </div> : <div className="w-full h-[660px] flex items-center justify-center"><ClockLoader color="orange" size={250} />  </div>
             }
         </>
     );
