@@ -27,7 +27,7 @@ interface BlogPost {
 
 }
 
-// Define the props type for the page component
+
 interface PageProps {
     params: {
         id: string;
@@ -35,8 +35,7 @@ interface PageProps {
 }
 
 const Page: React.FC<PageProps> = ({ params }) => {
-    const [blog, setBlog] = useState<BlogPost[]>([]); // Define blog state with BlogPost type array
-
+    const [blog, setBlog] = useState<BlogPost[]>([]);
     useEffect(() => {
         fetch(`https://next-and-typescript-server.vercel.app/detail`)
             .then(res => res.json())
@@ -88,7 +87,7 @@ const Page: React.FC<PageProps> = ({ params }) => {
                     <div className="space-y-8">
                         <div className="w-full h-auto relative mt-5" style={{ aspectRatio: '1296 / 700' }}>
                             <Image
-                                src={image1} // Add correct src here
+                                src={image1}
                                 layout="fill"
                                 objectFit="cover"
                                 alt="Picture of the author"

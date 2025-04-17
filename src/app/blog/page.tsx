@@ -42,7 +42,7 @@ const Page: React.FC = () => {
         const fetchBlogPosts = async () => {
             setLoading(true);  // Set loading to true when fetching starts
             try {
-                const response = await fetch(`https://next-and-typescript-server.vercel.app/blogpost?search=${search}&page=${currentPage}&size=${itemsPerPage}`);
+                const response = await fetch(`https://next-and-typescript-server.vercel.app/allpost?search=${search}&page=${currentPage}&size=${itemsPerPage}`);
                 const data: BlogDetails[] = await response.json();
                 setBlogDetails(data);
             } catch (error) {

@@ -30,7 +30,7 @@ const MyTab: React.FC = () => {
 
 
     useEffect(() => {
-        fetch("https://next-and-typescript-server.vercel.app/saaspicprotfolio")
+        fetch("http://localhost:8000/saaspicprotfolio")
             .then(res => res.json())
             .then(data => {
                 console.log(data)
