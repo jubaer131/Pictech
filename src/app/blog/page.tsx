@@ -52,7 +52,7 @@ const Page: React.FC = () => {
             }
         };
         fetchBlogPosts();
-    }, [search, currentPage, itemsPerPage]);
+    }, [search, currentPage, itemsPerPage, loading]);
 
 
 
@@ -136,7 +136,7 @@ const Page: React.FC = () => {
                 <div className="grid grid-cols-1 gap-4">
                     {/* Show loading indicator when fetching data */}
                     {loading ? (
-                        <div className="w-full h-[660px] flex items-center justify-center"><ClockLoader color="orange" size={800} />  </div>
+                        <div className="w-full h-[660px] flex items-center justify-center"><ClockLoader color="orange" size={200} />  </div>
                     ) : (
                         blogDetails.map(item => (
                             <BlogCard key={item._id} item={item} />
