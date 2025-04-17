@@ -1,5 +1,4 @@
 
-
 "use client";
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
@@ -37,7 +36,7 @@ interface PageProps {
 const Page: React.FC<PageProps> = ({ params }) => {
     const [blog, setBlog] = useState<BlogPost[]>([]);
     useEffect(() => {
-        fetch(`https://next-and-typescript-server.vercel.app/detail`)
+        fetch(`https://next-and-typescript-server.vercel.app/myblogpage`)
             .then(res => res.json())
             .then((data: BlogPost[]) => {
                 setBlog(data);
