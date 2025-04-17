@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import BlogSidebarCard from './BlogSidebarCard';
+import { ClockLoader } from 'react-spinners';
 
 
 
@@ -38,6 +39,9 @@ const BlogSideBar: React.FC<BlogSideBarProps> = ({ handleSearch, }) => {
 
             });
     }, []);
+
+    if (!postSidebar) return <div className="w-full h-[660px] flex items-center justify-center"><ClockLoader color="orange" size={70} />  </div>
+
     return (
         <>
 
