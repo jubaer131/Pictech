@@ -52,7 +52,7 @@ const Page: React.FC = () => {
             }
         };
         fetchBlogPosts();
-    }, [search, currentPage, itemsPerPage, loading]);
+    }, [search, currentPage, itemsPerPage]);
 
 
 
