@@ -32,7 +32,7 @@ const BlogSideBar: React.FC<BlogSideBarProps> = ({ handleSearch, }) => {
 
 
     useEffect(() => {
-        fetch(`https://next-and-typescript-server.vercel.app/detail`)
+        fetch(`https://next-and-typescript-server.vercel.app/detailpost`)
             .then(res => res.json())
             .then(data => {
                 setpostSidebar(data);
